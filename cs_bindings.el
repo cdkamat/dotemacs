@@ -1,0 +1,38 @@
+;;Cscope
+(require 'xcscope)
+(setq cscope-do-not-update-database t)
+
+;;To Make Cscope bindings available across all buffers
+(define-key global-map "\C-css" 'cscope-find-this-symbol)
+(define-key global-map "\C-csd" 'cscope-find-global-definition)
+(define-key global-map "\C-csg" 'cscope-find-global-definition)
+(define-key global-map "\C-csG" 'cscope-find-global-definition-no-prompting)
+(define-key global-map "\C-csc" 'cscope-find-functions-calling-this-function)
+(define-key global-map "\C-csC" 'cscope-find-called-functions)
+(define-key global-map "\C-cst" 'cscope-find-this-text-string)
+(define-key global-map "\C-cse" 'cscope-find-egrep-pattern)
+(define-key global-map "\C-csf" 'cscope-find-this-file)
+(define-key global-map "\C-csi" 'cscope-find-files-including-file)
+;; --- (The '---' indicates that this line corresponds to a menu separator.)
+(define-key global-map "\C-csb" 'cscope-display-buffer)
+(define-key global-map "\C-csB" 'cscope-display-buffer-toggle)
+(define-key global-map "\C-csn" 'cscope-next-symbol)
+(define-key global-map "\C-csN" 'cscope-next-file)
+(define-key global-map "\C-csp" 'cscope-prev-symbol)
+(define-key global-map "\C-csP" 'cscope-prev-file)
+(define-key global-map "\C-csu" 'cscope-pop-mark)
+;; ---
+(define-key global-map "\C-csa" 'cscope-set-initial-directory)
+(define-key global-map "\C-csA" 'cscope-unset-initial-directory)
+;; ---
+(define-key global-map "\C-csL" 'cscope-create-list-of-files-to-index)
+(define-key global-map "\C-csI" 'cscope-index-files)
+(define-key global-map "\C-csE" 'cscope-edit-list-of-files-to-index)
+(define-key global-map "\C-csW" 'cscope-tell-user-about-directory)
+(define-key global-map "\C-csS" 'cscope-tell-user-about-directory)
+(define-key global-map "\C-csT" 'cscope-tell-user-about-directory)
+(define-key global-map "\C-csD" 'cscope-dired-directory)
+(if (eq window-system 'nil)
+    (set-face-foreground 'cscope-line-face "green"))
+
+(provide 'cs_bindings)
