@@ -13,7 +13,7 @@
 	   (dabbrev-expand nil)
 	 (indent-for-tab-command))))
 
-;;C mode Show which function you are in
+;;Some C mode hooks
 (add-hook 'c-mode-common-hook 
   (lambda ()
     (which-function-mode t)
@@ -21,7 +21,7 @@
     (set-face-foreground 'which-func "blue")
     (global-set-key "\M-gc" 'complete-tag)
     (setq-default indent-tabs-mode nil)
-    (setq c-basic-offset 2)));; change to whatever is in file
+    (setq c-basic-offset 4)))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string nil)
@@ -89,7 +89,7 @@
         ))))
 (global-set-key (read-kbd-macro "M-;") 'my-comment-line-or-region)
 
-;;Programming mode settings
+;;Programming mode settings -- taken from http://github/vedang/emacs.d
 (defvar programming-major-modes
   '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode conf-mode)
   "List of programming modes")
@@ -107,6 +107,8 @@
 ;;Some keybindings
 (global-set-key [f1] 'manual-entry) ;; Man pages
 (define-key global-map "\M-r" 'query-replace-regexp) ;; replace Regex
+;;Keybindings for clipboard cut-copy-paste
+;;Works better when working with terminal mode
 (global-set-key [kbd (shift delete)] 'clipboard-kill-region)
 (global-set-key [kbd (control insert)] 'clipboard-kill-ring-save)
 (global-set-key [kbd (shift insert)] 'clipboard-yank)
