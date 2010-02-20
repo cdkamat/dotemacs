@@ -22,7 +22,6 @@
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
-(add-hook 'find-file-hook 'prog-mode-settings)
 
 ;;Org mode 
 (require 'org-install)
