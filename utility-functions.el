@@ -102,15 +102,14 @@
     ;;Flyspell mode for comments and strings
     (flyspell-prog-mode)))
 
-(add-hook 'find-file-hook 'prog-mode-settings)
-
 ;;Some keybindings
 (global-set-key [f1] 'manual-entry) ;; Man pages
 (define-key global-map "\M-r" 'query-replace-regexp) ;; replace Regex
+
 ;;Keybindings for clipboard cut-copy-paste
 ;;Works better when working with terminal mode
 (global-set-key [kbd (shift delete)] 'clipboard-kill-region)
 (global-set-key [kbd (control insert)] 'clipboard-kill-ring-save)
 (global-set-key [kbd (shift insert)] 'clipboard-yank)
 
-(provide 'custom)
+(provide 'utility-functions)

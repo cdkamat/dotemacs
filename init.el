@@ -10,6 +10,7 @@
 (show-paren-mode 1) ;;Show paren matching 
 (setq inhibit-startup-screen 1)
 (delete-selection-mode 1);;copy overwrite selected
+(setq-default ispell-program-name "aspell");;spell checker
 
 ;;Emacs back up settings
 (push '("." . "~/.emacs.d/.emacs-backups/") backup-directory-alist)
@@ -20,7 +21,8 @@
       backup-by-copying-when-linked t)
 
 ;;Custom functions and key bindings
-(require 'custom)
+(require 'utility-functions)
+(add-hook 'find-file-hook 'prog-mode-settings)
 
 ;;Org mode 
 (require 'org-install)
