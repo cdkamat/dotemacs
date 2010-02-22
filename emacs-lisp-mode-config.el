@@ -1,15 +1,12 @@
 ;; Taken from http://github.com/vedang/emacs.d
-;; Automatically byte-compile emacs-lisp files upon save
-(defun compile-el-on-save ()
-  "If saving an elisp file, byte-compile it."
-  (lambda ()
-    (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
-
+;;Turn on documentation in elisp mode
 (add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (turn-on-eldoc-mode)
-            (compile-el-on-save)))
-
+          '(lambda ()
+	     (turn-on-eldoc-mode)))
+;; Automatically byte-compile emacs-lisp files upon save
+(add-hook 'emacs-lisp-mode-hook 
+	  '(lambda () 
+	     (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
 
 (defun rgr/toggle-context-help()
   "Turn on or off the context help.
