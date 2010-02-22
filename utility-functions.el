@@ -163,4 +163,12 @@ Symbols matching the text at point are put first in the completion list."
     (flyspell-prog-mode)))
 (add-hook 'find-file-hook 'prog-mode-settings)
 
+;;from emacs-starter-kit
+(defun recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+
 (provide 'utility-functions)

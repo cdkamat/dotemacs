@@ -31,6 +31,7 @@
 
 (require 'saveplace)
 (setq-default save-place t)
+(require 'recentf)
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
