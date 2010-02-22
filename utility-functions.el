@@ -1,3 +1,51 @@
+;;Functions I use
+
+(require 'thingatpt)
+(require 'imenu)
+
+;;From emacs-starter-kit http://github.com/technomancy/emacs-starter-kit/
+(defun ido-imenu ()
+  "Update the imenu index and then use ido to select a symbol to navigate to.
+Symbols matching the text at point are put first in the completion list."
+  (interactive)
+  (imenu--make-index-alist)
+  (let ((name-and-pos '())
+        (symbol-names '()))
+    (flet ((addsymbols (symbol-list)
+                       (when (listp symbol-list)
+                         (dolist (symbol symbol-list)
+                           (let ((name nil) (position nil))
+                             (cond
+                              ((and (listp symbol) (imenu--subalist-p symbol))
+                               (addsymbols symbol))
+                              
+                              ((listp symbol)
+                               (setq name (car symbol))
+                               (setq position (cdr symbol)))
+                              
+                              ((stringp symbol)
+                               (setq name symbol)
+                               (setq position (get-text-property 1 'org-imenu-marker symbol))))
+                             
+                             (unless (or (null position) (null name))
+                               (add-to-list 'symbol-names name)
+                               (add-to-list 'name-and-pos (cons name position))))))))
+      (addsymbols imenu--index-alist))
+    ;; If there are matching symbols at point, put them at the beginning of `symbol-names'.
+    (let ((symbol-at-point (thing-at-point 'symbol)))
+      (when symbol-at-point
+        (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
+               (matching-symbols (delq nil (mapcar (lambda (symbol)
+                                                     (if (string-match regexp symbol) symbol))
+                                                   symbol-names))))
+          (when matching-symbols
+            (sort matching-symbols (lambda (a b) (> (length a) (length b))))
+            (mapc (lambda (symbol) (setq symbol-names (cons symbol (delete symbol symbol-names))))
+                  matching-symbols)))))
+    (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
+           (position (cdr (assoc selected-symbol name-and-pos))))
+      (goto-char position))))
+
 ;;function to implement a smarter TAB
 (global-set-key (kbd "TAB") 'smart-tab)
 (defun smart-tab ()
@@ -25,7 +73,7 @@
 	    (set-face-foreground 'which-func "blue")
 	    (global-set-key "\M-gc" 'complete-tag)
 	    (setq-default indent-tabs-mode nil)
-	    (setq c-basic-offset 4)
+	    (setq-default c-basic-offset 4)
 	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
 	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
 	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
@@ -103,16 +151,5 @@
     ;;Flyspell mode for comments and strings
     (flyspell-prog-mode)))
 (add-hook 'find-file-hook 'prog-mode-settings)
-
-;;Some keybindings
-(global-set-key [f1] 'manual-entry) ;; Man pages
-(define-key global-map "\M-r" 'query-replace-regexp) ;; replace Regex
-(global-set-key (kbd "M-g") 'goto-line)
-
-;;Keybindings for clipboard cut-copy-paste
-;;Works better when working with terminal mode
-(global-set-key [kbd (shift delete)] 'clipboard-kill-region)
-(global-set-key [kbd (control insert)] 'clipboard-kill-ring-save)
-(global-set-key [kbd (shift insert)] 'clipboard-yank)
 
 (provide 'utility-functions)

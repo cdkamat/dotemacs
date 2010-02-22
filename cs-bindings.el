@@ -35,4 +35,4 @@
 (if (eq window-system 'nil)
     (set-face-foreground 'cscope-line-face "green"))
 
-(provide 'cs_bindings)
+(provide 'cs-bindings)

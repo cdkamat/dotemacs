@@ -12,6 +12,10 @@
 (delete-selection-mode 1);;copy overwrite selected
 (setq-default ispell-program-name "aspell");;spell checker
 
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 ;;Emacs back up settings
 (push '("." . "~/.emacs.d/.emacs-backups/") backup-directory-alist)
 (setq version-control t
@@ -19,6 +23,12 @@
       kept-old-versions 5
       delete-old-versions t
       backup-by-copying-when-linked t)
+
+;;Custom keybindings
+(require 'misc-bindings)
+
+(require 'saveplace)
+(setq-default save-place t)
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
@@ -41,7 +51,7 @@
 (yas/initialize)
 
 ;;Cscope
-(require 'cs_bindings)
+(require 'cs-bindings)
 
 ;;Elisp mode
 (require 'emacs-lisp-mode-config)
@@ -53,6 +63,11 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10)
 
 ;;Uniquify
 (require 'uniquify)
