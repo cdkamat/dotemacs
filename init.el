@@ -11,6 +11,8 @@
 (setq inhibit-startup-screen 1)
 (delete-selection-mode 1);;copy overwrite selected
 (setq-default ispell-program-name "aspell");;spell checker
+(setq require-final-newline t)
+(setq debug-on-error t)
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
