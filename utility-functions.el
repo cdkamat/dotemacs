@@ -82,7 +82,6 @@ Symbols matching the text at point are put first in the completion list."
 	    (which-function-mode t)
 	    (set-face-background 'which-func "white")
 	    (set-face-foreground 'which-func "blue")
-	    (global-set-key "\M-gc" 'complete-tag)
 	    (setq-default indent-tabs-mode nil)
 	    (setq-default c-basic-offset 4)
 	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
