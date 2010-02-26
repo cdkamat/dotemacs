@@ -1,5 +1,4 @@
 ;;Functions to execute Bit keeper commands from boxer
-;;By Chinmay Kamat <chinmaykamat@gmail.com>
 
 (require 'vc)
 
@@ -29,6 +28,7 @@ Confirm before execution"
   (diff-mode))
 
 ;; Keybindings only for BK mode
+;; TODO -- change this to work only for bk/sccs - not for all vc modes
 (defun bk-mode-settings ()
   "special settings for programming modes."
   (if vc-mode 
