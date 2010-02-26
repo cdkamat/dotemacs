@@ -74,3 +74,6 @@
 ;;Uniquify
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
+
+;;Bitkeeper
+(require 'bk)
