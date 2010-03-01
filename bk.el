@@ -11,7 +11,7 @@
 
 (defun bk-unedit ()
   "Function to run bk unedit on the current buffer.
-Confirm before execution"
+   Confirm before execution"
   (interactive)
   (if (y-or-n-p (format "Do you want run unedit on %s" (buffer-name (current-buffer))))
       (shell-command (concat "bk unedit " 
@@ -28,10 +28,10 @@ Confirm before execution"
   (diff-mode))
 
 ;; Keybindings only for BK mode
-;; TODO -- change this to work only for bk/sccs - not for all vc modes
+
 (defun bk-mode-settings ()
   "special settings for programming modes."
-  (if vc-mode 
+  (if (and vc-mode (string-match "^ SCCS" (substring-no-properties vc-mode)))
       (progn 
       (local-set-key [f6] 'bk-edit)
       (local-set-key [f7] 'bk-unedit)
