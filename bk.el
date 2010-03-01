@@ -1,4 +1,5 @@
-;;Functions to execute Bit keeper commands from boxer
+;;Functions to execute Bit keeper commands
+;;TODO -- Add more commands - citool, difftool, revtool
 
 (require 'vc)
 
