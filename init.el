@@ -21,10 +21,12 @@
 ;;Emacs back up settings
 (push '("." . "~/.emacs.d/.emacs-backups/") backup-directory-alist)
 (setq version-control t
-      kept-new-versions 2
+      kept-new-versions 15
       kept-old-versions 5
       delete-old-versions t
-      backup-by-copying-when-linked t)
+      backup-by-copying-when-linked t
+      vc-make-backup-files t);;Make backup even if under version control
+(add-hook 'before-save-hook  'force-backup-of-buffer)
 
 ;;Custom keybindings
 (require 'misc-bindings)

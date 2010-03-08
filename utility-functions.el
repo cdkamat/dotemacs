@@ -169,4 +169,8 @@ Symbols matching the text at point are put first in the completion list."
     (when file
       (find-file file))))
 
+;;Force backup of buffer after each save
+(defun force-backup-of-buffer ()
+    (setq buffer-backed-up nil))
+
 (provide 'utility-functions)
