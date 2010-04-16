@@ -13,6 +13,7 @@
 (setq-default ispell-program-name "aspell");;spell checker
 (setq require-final-newline t)
 (setq debug-on-error t)
+(setq visible-bell t)
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -61,9 +62,6 @@
 ;;Elisp mode
 (require 'emacs-lisp-mode-config)
 
-;;Color-themes
-(require 'color-theme)
-
 ;;Ido mode
 (require 'ido)
 (ido-mode t)
@@ -79,3 +77,8 @@
 
 ;;Bitkeeper
 (require 'bk)
+
+;; Color theme
+(require 'color-theme-wombat)
+(if window-system
+    (color-theme-wombat))
