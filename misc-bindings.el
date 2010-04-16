@@ -40,4 +40,9 @@
 (global-set-key [kbd (control insert)] 'clipboard-kill-ring-save)
 (global-set-key [kbd (shift insert)] 'clipboard-yank)
 
+;; Add backward-kill-word as Yegge
+(global-set-key (kbd "C-w") 'backward-kill-word) ;; easy editing
+(global-set-key (kbd "C-k") 'kill-region) ;; remapping C-w
+(global-set-key (kbd "C-x C-k") 'kill-line) ;; kill-line
+
 (provide 'misc-bindings)
