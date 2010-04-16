@@ -33,6 +33,7 @@
 (global-set-key [f1] 'manual-entry) ;; Man pages
 (define-key global-map "\M-r" 'query-replace-regexp) ;; replace Regex
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-y") 'yank-pop)
 
 ;;Keybindings for clipboard cut-copy-paste
 ;;Works better when working with terminal mode
