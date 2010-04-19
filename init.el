@@ -63,9 +63,10 @@
 (setq comint-prompt-read-only t)
  
 ;;settings for yasnippet
-(require 'yasnippet-bundle) ;; not yasnippet-bundle
+(require 'yasnippet) ;; not yasnippet-bundle
 (global-set-key (kbd "S-TAB") 'yas/trigger-key)
 (yas/initialize)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 ;;Cscope
 (require 'cs-bindings)
