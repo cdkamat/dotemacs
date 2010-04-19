@@ -1,3 +1,6 @@
 [submodule "plugins/pkgbuild-mode"]
 	path = plugins/pkgbuild-mode
 	url = git://github.com/cdkamat/pkgbuild-mode.git
+[submodule "plugins/yasnippet/snippets/text-mode/org-mode"]
+	path = plugins/yasnippet/snippets/text-mode/org-mode
+	url = git://github.com/RickMoynihan/yasnippet-org-mode.git
