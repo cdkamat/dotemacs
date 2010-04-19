@@ -1,0 +1,3 @@
+[submodule "plugins/pkgbuild-mode"]
+	path = plugins/pkgbuild-mode
+	url = git://github.com/cdkamat/pkgbuild-mode.git
