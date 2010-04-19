@@ -12,7 +12,7 @@
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "<f5>") 'revert-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
  
 ;; Window switching. (C-x o goes to the next window)
