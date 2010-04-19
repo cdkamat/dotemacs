@@ -1,3 +1,8 @@
+;; User details
+
+(setq user-full-name "Chinmay Kamat")
+(setq user-mail-address "chinmaykamat@gmail.com")
+
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")
        (default-directory my-lisp-dir)
