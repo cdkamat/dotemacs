@@ -1,4 +1,10 @@
-(add-to-list 'load-path "~/.emacs.d/") ;;Emacs load path
+;;Emacs load path
+(let* ((my-lisp-dir "~/.emacs.d/")
+       (default-directory my-lisp-dir)
+       (orig-load-path load-path))
+  (setq load-path (cons my-lisp-dir nil))
+  (normal-top-level-add-subdirs-to-load-path)
+  (nconc load-path orig-load-path))
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1)) ;; no tool-bar
