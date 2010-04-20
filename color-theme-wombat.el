@@ -85,7 +85,9 @@
      (font-lock-type-face ((t (:foreground "#f0dfaf"))))
      (font-lock-variable-name-face ((t (:foreground ,wombat-fg))))
      (font-lock-warning-face ((t (:bold t :foreground ,wombat-red))))
-
+     
+     (which-func-face ((t (:foreground "white"))))
+     (which-func ((t (:foreground "white"))))
 
      ;; UI Items
      ;(border ((t (:background "#888a85"))))

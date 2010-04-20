@@ -79,9 +79,7 @@ Symbols matching the text at point are put first in the completion list."
 (add-hook 'c-mode-common-hook 
 	  (lambda ()
 	    (which-function-mode t)
-	    (set-face-background 'which-func "white")
-	    (set-face-foreground 'which-func "blue")
-	    (setq-default indent-tabs-mode nil)
+            (setq-default indent-tabs-mode nil)
 	    (setq-default c-basic-offset 4)
 	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
 	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
