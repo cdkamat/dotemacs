@@ -60,6 +60,8 @@
 (defun color-theme-wombat ()
   "The wombat color theme for Emacs."
   (interactive)
+  ;; set font 
+  (set-frame-font "Monospace-11")
   (color-theme-install
    `(color-theme-wombat
      ((background-color . ,wombat-bg)
