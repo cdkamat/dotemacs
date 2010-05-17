@@ -100,3 +100,10 @@
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode))
 			       auto-mode-alist))
+
+(require 'server)
+(setq server-socket-dir "~/.emacs.d/")
+;; Suppress error "directory 
+;; ~/.emacs.d/server is unsafe"
+(when (= emacs-major-version 23)
+  (defun server-ensure-safe-dir (dir) "Noop" t))
