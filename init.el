@@ -92,6 +92,7 @@
 
 ;; Color theme
 (require 'color-theme-wombat)
+(require 'folio)
 (if window-system
     (color-theme-wombat))
 
