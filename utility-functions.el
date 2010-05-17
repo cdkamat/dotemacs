@@ -78,14 +78,8 @@ Symbols matching the text at point are put first in the completion list."
 ;;Some C mode hooks
 (add-hook 'c-mode-common-hook 
 	  (lambda ()
-	    (which-function-mode t)
-            (setq-default indent-tabs-mode nil)
-	    (setq-default c-basic-offset 4)
-	    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-	    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-	    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-	    (local-set-key (kbd "C-c <down>")  'hs-show-all)
-	    (hs-minor-mode t)))
+	    (c-set-style "linux")
+            (setq-default indent-tabs-mode nil)))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string nil)
@@ -155,6 +149,14 @@ Symbols matching the text at point are put first in the completion list."
   (when (memq major-mode programming-major-modes)
     ;;No stray edits.Toggle with (C-x C-q) if I want to make an edit
     (toggle-read-only 1)
+    (which-function-mode t)
+    (local-set-key (kbd "C-c <right>") 'hs-show-block)
+    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
+    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
+    (local-set-key (kbd "C-c <down>")  'hs-show-all)
+    (hs-minor-mode t)
+    (setq comment-style 'extra-line)
+    (setq comment-multi-line 't)
     ;;Flyspell mode for comments and strings
     (flyspell-prog-mode)))
 (add-hook 'find-file-hook 'prog-mode-settings)
