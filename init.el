@@ -45,7 +45,14 @@
 
 (require 'saveplace)
 (setq-default save-place t)
+(setq save-place-file "~/.emacs.d/cache/saveplace")
+;; recentf
 (require 'recentf)
+(setq
+  recentf-save-file "~/.emacs.d/cache/recentf"
+  recentf-max-saved-items 15
+  recentf-max-menu-items 5)
+(recentf-mode t)
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
