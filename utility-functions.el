@@ -57,7 +57,6 @@ Symbols matching the text at point are put first in the completion list."
          try-complete-lisp-symbol))
 
 ;;function to implement a smarter TAB
-(global-set-key (kbd "TAB") 'smart-tab)
 (defun smart-tab ()
   "This smart tab is minibuffer compliant: it acts as usual in
   the minibuffer. Else, if mark is active, indents region. Else if
