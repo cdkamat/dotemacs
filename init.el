@@ -107,3 +107,5 @@
 ;; ~/.emacs.d/server is unsafe"
 (when (= emacs-major-version 23)
   (defun server-ensure-safe-dir (dir) "Noop" t))
+
+(require 'c-eldoc)

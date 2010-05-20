@@ -79,6 +79,7 @@ Symbols matching the text at point are put first in the completion list."
 (add-hook 'c-mode-common-hook 
 	  (lambda ()
 	    (c-set-style "linux")
+	    (c-turn-on-eldoc-mode)
             (setq-default indent-tabs-mode nil)))
 
 ;; I-search with initial contents
