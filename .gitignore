@@ -13,3 +13,5 @@ session.*
 org-clock-save
 /server
 tramp
+/cache
+/semanticdb
