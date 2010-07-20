@@ -57,7 +57,7 @@
 (defvar wombat-gray "#424242")
 (defvar wombat-gray+1 "#99968b")
 
-(defun color-theme-wombat ()
+(defun color-theme-wombat (&optional frame)
   "The wombat color theme for Emacs."
   (interactive)
   ;; set font 

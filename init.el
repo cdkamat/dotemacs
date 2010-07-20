@@ -97,6 +97,7 @@
 (require 'folio)
 (if window-system
     (color-theme-wombat))
+(add-hook 'after-make-frame-functions 'color-theme-wombat)
 
 ;; PKGBUILD mode
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
