@@ -82,11 +82,11 @@ Symbols matching the text at point are put first in the completion list."
             (setq-default indent-tabs-mode nil)))
 
 ;; I-search with initial contents
-(defvar isearch-initial-string nil)
+(defvar isearch-initial-string "")
 
 (defun isearch-set-initial-string ()
   (remove-hook 'isearch-mode-hook 'isearch-set-initial-string)
-  (setq isearch-string isearch-initial-string)
+  (isearch-yank-string isearch-initial-string)
   (isearch-search-and-update))
 
 (defun isearch-forward-at-point (&optional regexp-p no-recursive-edit)
@@ -97,7 +97,7 @@ Symbols matching the text at point are put first in the completion list."
            (begin (progn (skip-syntax-backward "w_") (point))))
       (if (eq begin end)
           (isearch-forward regexp-p no-recursive-edit)
-        (setq isearch-initial-string (buffer-substring begin end))
+	(setq isearch-initial-string (buffer-substring-no-properties begin end))
         (add-hook 'isearch-mode-hook 'isearch-set-initial-string)
         (isearch-forward regexp-p no-recursive-edit)))))
 
