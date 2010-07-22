@@ -165,13 +165,13 @@
      ;; Eshell
      (eshell-prompt-face ((t (:foreground "#f0dfaf"))))
      (eshell-ls-archive-face ((t (:foreground "#c3bf9f" :weight bold))))
-     (eshell-ls-backup-face ((t (:inherit font-lock-comment))))
-     (eshell-ls-clutter-face ((t (:inherit font-lock-comment))))
+     (eshell-ls-backup-face ((t (:inherit font-lock-comment-face))))
+     (eshell-ls-clutter-face ((t (:inherit font-lock-comment-face))))
      (eshell-ls-directory-face ((t (:foreground ,"#94bff3" :bold t :weight bold))))
      (eshell-ls-executable-face ((t (:foreground ,"#dca3a3" :bold t ))))
      (eshell-ls-unreadable-face ((t (:foreground "#606060"))))
-     (eshell-ls-missing-face ((t (:inherit font-lock-warning))))
-     (eshell-ls-product-face ((t (:inherit font-lock-doc))))
+     (eshell-ls-missing-face ((t (:inherit font-lock-warning-face))))
+     (eshell-ls-product-face ((t (:inherit font-lock-doc-face))))
      (eshell-ls-special-face ((t (:foreground "#e0cf9f"))))
      (eshell-ls-symlink-face ((t (:foreground ,"#93e0e3" :bold t :weight bold))))
 
@@ -183,7 +183,7 @@
 
      (diff-added ((t (:foreground "#dfdfbf" :bold t :weight bold))))
      (diff-removed ((t (:foreground "#8cd0d3"))))
-     (diff-context ((t (:inherit font-lock-comment))))
+     (diff-context ((t (:inherit font-lock-comment-face))))
 
      )))
 
