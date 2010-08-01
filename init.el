@@ -111,8 +111,6 @@
 (when (= emacs-major-version 23)
   (defun server-ensure-safe-dir (dir) "Noop" t))
 
-(require 'c-eldoc)
-
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
