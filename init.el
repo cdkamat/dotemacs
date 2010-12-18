@@ -111,6 +111,9 @@
 (when (= emacs-major-version 23)
   (defun server-ensure-safe-dir (dir) "Noop" t))
 
+(icomplete-mode)
+(eval-after-load "icomplete" '(progn (require 'icomplete+)))
+
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
