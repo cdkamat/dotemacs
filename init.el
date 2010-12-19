@@ -114,6 +114,8 @@
 (icomplete-mode)
 (eval-after-load "icomplete" '(progn (require 'icomplete+)))
 
+(require 'latex-mode-config)
+
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
