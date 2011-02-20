@@ -5,6 +5,9 @@
   (flyspell-mode))
 
 (add-hook 'LaTeX-mode-hook 'latex-mode-settings)
+(add-hook 'LaTeX-mode-hook 'TeX-PDF-mode) ;turn on pdf-mode.  AUCTeX
+                                          ;will call pdflatex to
+                                          ;compile instead of latex.
 
 (setq reftex-plug-into-AUCTeX t)
 (setq TeX-auto-save t
