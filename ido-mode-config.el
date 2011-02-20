@@ -1,8 +1,5 @@
 ;; ido-mode-config.el --  Configuration for ido-mode
 
-(ido-mode t)
-(ido-everywhere t)
-
 (setq 
   ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
   ido-case-fold  t
@@ -18,6 +15,9 @@
   ido-enable-tramp-completion t
   ;; do not ask for confirmation
   confirm-nonexistent-file-or-buffer nil)
+
+(ido-mode t)
+(ido-everywhere t)
 
 (add-hook 'ido-setup-hook
           (lambda ()
