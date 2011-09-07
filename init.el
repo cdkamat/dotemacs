@@ -54,9 +54,9 @@
 ;;Org mode 
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
+(setq org-agenda-files (file-expand-wildcards "~/Documents/Notes/*.org" "~/Documents/Notes/archive/*.org_archive"))
+(require 'org-mode-config)
+(org-agenda-to-appt)
 
 ;;settings for shell
 (require 'ansi-color)
