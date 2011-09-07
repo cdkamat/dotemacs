@@ -108,6 +108,7 @@
 
 (require 'latex-mode-config)
 
+(require 'tbemail)
 
 ;; Auto-complete mode
 (require 'auto-complete-config)
