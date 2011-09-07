@@ -56,6 +56,7 @@ imenu index, then jumps to that symbol's location."
 (add-hook 'c-mode-common-hook 
 	  (lambda ()
 	    (c-set-style "linux")
+	    (setq c-basic-offset 4)
 	    (setq-default indent-tabs-mode nil)))
 
 ;; I-search with initial contents
