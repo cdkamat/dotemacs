@@ -139,14 +139,6 @@ imenu index, then jumps to that symbol's location."
     (flyspell-prog-mode)))
 (add-hook 'find-file-hook 'prog-mode-settings)
 
-;;from emacs-starter-kit
-(defun recentf-ido-find-file ()
-  "Find a recent file using ido."
-  (interactive)
-  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
-    (when file
-      (find-file file))))
-
 ;;Force backup of buffer after each save
 (defun force-backup-of-buffer ()
     (setq buffer-backed-up nil))
