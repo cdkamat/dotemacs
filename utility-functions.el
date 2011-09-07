@@ -48,7 +48,7 @@ imenu index, then jumps to that symbol's location."
 	(indent-region (region-beginning)
 		       (region-end))
       (if (looking-at "\\_>")
-	  (hippie-expand nil)
+	  (auto-complete)
 	(indent-for-tab-command)))))
 (global-set-key (kbd "TAB") 'smart-tab)
 

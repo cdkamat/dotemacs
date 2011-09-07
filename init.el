@@ -108,6 +108,17 @@
 
 (require 'latex-mode-config)
 
+
+;; Auto-complete mode
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
+(ac-config-default)
+(setq ac-auto-start 3)
+(setq ac-auto-show-menu 0.8)
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
