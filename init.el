@@ -95,11 +95,13 @@
 			       auto-mode-alist))
 
 (require 'server)
-(setq server-socket-dir "~/.emacs.d/")
-;; Suppress error "directory 
-;; ~/.emacs.d/server is unsafe"
-(when (= emacs-major-version 23)
-  (defun server-ensure-safe-dir (dir) "Noop" t))
+;; (setq server-use-tcp t)
+;; (setq server-host "serenity")
+;; ;; Suppress error "directory
+;; ;; ~/.emacs.d/server is unsafe"
+;; (when (= emacs-major-version 23)
+;;   (defun server-ensure-safe-dir (dir) "Noop" t))
+;; (setq server-socket-dir "~/.emacs.d/")
 
 (icomplete-mode)
 (eval-after-load "icomplete" '(progn (require 'icomplete+)))
