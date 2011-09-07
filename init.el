@@ -89,9 +89,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
 
-;;Bitkeeper
-(require 'bk)
-
 ;; Color theme
 (require 'color-theme-wombat)
 (require 'folio)
