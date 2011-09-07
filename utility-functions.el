@@ -143,4 +143,20 @@ imenu index, then jumps to that symbol's location."
 (defun force-backup-of-buffer ()
     (setq buffer-backed-up nil))
 
+(defun sudo-edit (&optional arg)
+  "Edit as root"
+  (interactive "p")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(defun backward-kill-word-or-kill-region (&optional arg)
+  "Change C-w behavior"
+  (interactive "p")
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word arg)))
+
+(global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
+
 (provide 'utility-functions)
