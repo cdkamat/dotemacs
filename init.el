@@ -26,6 +26,7 @@
 ;; (setq debug-on-error t)
 (setq visible-bell t)
 (setq doc-view-continuous t)
+(setq column-number-mode t)
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
