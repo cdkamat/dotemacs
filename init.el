@@ -31,7 +31,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-
+(setq cache-dir "~/.emacs.d/cache/")
 ;;Emacs back up settings
 (push '("." . "~/.emacs.d/.emacs-backups/") backup-directory-alist)
 (setq version-control t
@@ -47,7 +47,7 @@
 
 (require 'saveplace)
 (setq-default save-place t)
-(setq save-place-file "~/.emacs.d/cache/saveplace")
+(setq save-place-file (concat cache-dir "saveplace"))
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
