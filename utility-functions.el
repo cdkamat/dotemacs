@@ -136,7 +136,11 @@ imenu index, then jumps to that symbol's location."
     (setq comment-style 'extra-line)
     (setq comment-multi-line 't)
     ;;Flyspell mode for comments and strings
-    (flyspell-prog-mode)))
+    (flyspell-prog-mode)
+    ;; This highlights part of line > 80 with an ugly pink color
+    ;; Remove text having this color
+    (setq whitespace-style '(lines-tail trailing))
+    (whitespace-mode)))
 (add-hook 'find-file-hook 'prog-mode-settings)
 
 ;;Force backup of buffer after each save
@@ -164,5 +168,8 @@ imenu index, then jumps to that symbol's location."
 	  (lambda ()
 	    (auto-fill-mode)
 	    (setq fill-column 80)))
+
+(setq whitespace-style '(trailing))
+(whitespace-mode)
 
 (provide 'utility-functions)
