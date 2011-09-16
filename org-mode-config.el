@@ -130,7 +130,9 @@
 	    (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
 	    (define-key yas/keymap [tab] 'yas/next-field)
 	    ;; flyspell mode to spell check everywhere
-	    (flyspell-mode 1)))
+	    (flyspell-mode 1)
+	    (auto-fill-mode)
+	    (setq fill-column 80)))
 
 ;; Export org table as CSV by default
 (setq org-table-export-default-format "orgtbl-to-csv")

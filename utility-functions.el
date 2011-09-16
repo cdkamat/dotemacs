@@ -159,4 +159,10 @@ imenu index, then jumps to that symbol's location."
 
 (global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
 
+;; Column fill settings for text mode
+(add-hook 'text-mode-hook
+	  (lambda ()
+	    (auto-fill-mode)
+	    (setq fill-column 80)))
+
 (provide 'utility-functions)
