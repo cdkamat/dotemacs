@@ -19,7 +19,7 @@
 (global-set-key (kbd "C-c r") 'org-capture)
 (global-set-key (kbd "<f12>") 'org-agenda-list)
 
-(setq org-capture-templates `(("a" "Assignment" entry (file "~/Documents/Notes/assignments.org") "* TODO %^{Assignment desc} %^g%?") 
+(setq org-capture-templates `(("a" "Assignment" entry (file "~/Documents/Notes/assignments.org") "* TODO %^{Assignment desc} \nDEADLINE: %^T %?")
 			      ("c" "Call" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %? :@Call: %i")
 			      ("m" "Meeting" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %^{Meeting For} :@Call: %^{Time}t %^{Location}p  %i")
 			      ("e" "Email" entry (file+headline "~/Documents/Notes/remember.org" "Email") "* %? :@Email: %i")
