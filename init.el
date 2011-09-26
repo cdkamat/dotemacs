@@ -114,6 +114,9 @@
 ;; Auto-complete mode
 (require 'auto-comp-config)
 
+;; Magit
+(require 'magit)
+
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
