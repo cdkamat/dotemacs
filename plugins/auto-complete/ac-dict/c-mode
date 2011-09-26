@@ -23,6 +23,7 @@ long
 register
 restrict
 return
+scanf
 short
 signed
 sizeof
