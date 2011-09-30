@@ -56,8 +56,7 @@ imenu index, then jumps to that symbol's location."
 (add-hook 'c-mode-common-hook 
 	  (lambda ()
 	    (c-set-style "linux")
-	    (setq c-basic-offset 4)
-	    (setq-default indent-tabs-mode nil)))
+	    (setq c-basic-offset 4)))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string "")
@@ -119,7 +118,8 @@ imenu index, then jumps to that symbol's location."
 
 ;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
 (defvar programming-major-modes
-  '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode conf-mode)
+  '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
+                    conf-mode asm-mode makefile-mode)
   "List of programming modes")
 
 (defun prog-mode-settings ()
@@ -128,6 +128,8 @@ imenu index, then jumps to that symbol's location."
     ;;No stray edits.Toggle with (C-x C-q) if I want to make an edit
     (toggle-read-only 1)
     (which-function-mode t)
+    ;; Never use tabs to indent in prog-modes
+    (setq-default indent-tabs-mode nil)
     (local-set-key (kbd "C-c <right>") 'hs-show-block)
     (local-set-key (kbd "C-c <left>")  'hs-hide-block)
     (local-set-key (kbd "C-c <up>")    'hs-hide-all)
@@ -171,5 +173,15 @@ imenu index, then jumps to that symbol's location."
 
 (setq whitespace-style '(trailing))
 (whitespace-mode)
+
+(add-hook 'asm-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<f8>") 'toggle-asm-comment-char)))
+
+(defun toggle-asm-comment-char ()
+    "Toggle asm comment char in ; and @"
+    (interactive)
+    (setq asm-comment-char (if (= asm-comment-char 59) 64 59))
+    (revert-buffer nil 1))
 
 (provide 'utility-functions)
