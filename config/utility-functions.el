@@ -142,7 +142,10 @@ imenu index, then jumps to that symbol's location."
     ;; This highlights part of line > 80 with an ugly pink color
     ;; Remove text having this color
     (setq whitespace-style '(lines-tail trailing))
-    (whitespace-mode)))
+    (whitespace-mode)
+    (auto-fill-mode)
+    (setq fill-column 80)
+    (setq comment-auto-fill-only-comments t)))
 (add-hook 'find-file-hook 'prog-mode-settings)
 
 ;;Force backup of buffer after each save
