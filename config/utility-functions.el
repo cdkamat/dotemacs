@@ -81,8 +81,7 @@ imenu index, then jumps to that symbol's location."
 (define-key global-map "\M-s" 'isearch-forward-at-point)
 
 ;;Insert current buffer name in minibuf on F3
-(define-key minibuffer-local-map
-  [f3] (lambda () (interactive) 
+(global-set-key [f3] (lambda () (interactive) 
 	 (insert (buffer-name (current-buffer-not-mini)))))
 
 (defun current-buffer-not-mini ()
