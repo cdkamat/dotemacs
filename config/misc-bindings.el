@@ -29,7 +29,7 @@
 (global-set-key (kbd "C-x M-m") 'shell)
 
 ;;Some keybindings
-(global-set-key [f1] 'manual-entry) ;; Man pages
+(global-set-key [f1] 'woman) ;; Man pages
 (define-key global-map "\M-r" 'query-replace-regexp) ;; replace Regex
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-y") 'yank-pop)
