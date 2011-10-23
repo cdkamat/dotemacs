@@ -1,7 +1,5 @@
-;; User details
-
-(setq user-full-name "Chinmay Kamat")
-(setq user-mail-address "chinmaykamat@gmail.com")
+;; init.el Loads everything
+;; Last modified :
 
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")
@@ -11,106 +9,17 @@
   (normal-top-level-add-subdirs-to-load-path)
   (nconc load-path orig-load-path))
 
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll-bar
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1)) ;; no tool-bar
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) ;; no menu-bar
-;;use y-or-n instead of yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
+;; CDK customizations
+(require 'cdk-config)
 
-(global-font-lock-mode 1) ;; Colours
-(show-paren-mode 1) ;;Show paren matching 
-(setq inhibit-startup-screen 1)
-(delete-selection-mode 1);;copy overwrite selected
-(setq-default ispell-program-name "aspell");;spell checker
-(setq require-final-newline t)
-;; (setq debug-on-error t)
-(setq visible-bell t)
-(setq doc-view-continuous t)
-(setq column-number-mode t)
-
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-(setq cache-dir "~/.emacs.d/cache/")
-;;Emacs back up settings
-(push '("." . "~/.emacs.d/.emacs-backups/") backup-directory-alist)
-(setq version-control t
-      kept-new-versions 15
-      kept-old-versions 5
-      delete-old-versions t
-      backup-by-copying-when-linked t
-      vc-make-backup-files t);;Make backup even if under version control
-(add-hook 'before-save-hook  'force-backup-of-buffer)
-
-;;Custom keybindings
-(require 'misc-bindings)
-
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (concat cache-dir "saveplace"))
+;; Mode confiturations
+(require 'mode-config)
 
 ;;Custom functions and key bindings
 (require 'utility-functions)
 
-;;Org mode 
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(setq org-agenda-files (file-expand-wildcards "~/Documents/Notes/*.org" "~/Documents/Notes/archive/*.org_archive"))
-(require 'org-mode-config)
-(org-agenda-to-appt)
-
-;;settings for shell
-(require 'ansi-color)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(setq comint-prompt-read-only t)
- 
-;;settings for yasnippet
-(require 'yasnippet) ;; not yasnippet-bundle
-(global-set-key (kbd "S-TAB") 'yas/trigger-key)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
-
-;;Cscope
-(require 'cs-bindings)
-
-;;Elisp mode
-(require 'emacs-lisp-mode-config)
-
-;;Ido mode
-(require 'ido)
-(require 'ido-mode-config)
-
-;;Uniquify
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward)
-
-;; Color theme
-(require 'color-theme-wombat)
-(require 'folio)
-(color-theme-wombat)
-(add-hook 'after-make-frame-functions 'color-theme-wombat)
-
-(require 'server)
-;; (setq server-use-tcp t)
-;; (setq server-host "serenity")
-;; ;; Suppress error "directory
-;; ;; ~/.emacs.d/server is unsafe"
-;; (when (= emacs-major-version 23)
-;;   (defun server-ensure-safe-dir (dir) "Noop" t))
-;; (setq server-socket-dir "~/.emacs.d/")
-
-(icomplete-mode)
-(eval-after-load "icomplete" '(progn (require 'icomplete+)))
-
-(require 'latex-mode-config)
-
-(require 'tbemail)
-
-;; Auto-complete mode
-(require 'auto-comp-config)
-
-;; Magit
-(require 'magit)
+;;Custom keybindings
+(require 'misc-bindings)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and

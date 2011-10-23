@@ -1,4 +1,5 @@
-;;Functions I use
+;; utility-functions.el - contains the functions that I use
+;; Last modified : Sun, 23 October 2011 19:39:41 EDT
 
 (require 'thingatpt)
 (require 'imenu)
@@ -50,14 +51,6 @@ imenu index, then jumps to that symbol's location."
       (if (looking-at "\\_>")
 	  (auto-complete)
 	(indent-for-tab-command)))))
-(global-set-key (kbd "TAB") 'smart-tab)
-
-;;Some C mode hooks
-(add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (c-set-style "linux")
-	    (setq c-basic-offset 4)
-            (local-set-key (kbd "C-c C-c") 'compile)))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string "")
@@ -79,12 +72,6 @@ imenu index, then jumps to that symbol's location."
         (add-hook 'isearch-mode-hook 'isearch-set-initial-string)
         (isearch-forward regexp-p no-recursive-edit)))))
 
-(define-key global-map "\M-s" 'isearch-forward-at-point)
-
-;;Insert current buffer name in minibuf on F3
-(global-set-key [f3] (lambda () (interactive) 
-	 (insert (buffer-name (current-buffer-not-mini)))))
-
 (defun current-buffer-not-mini ()
   "Return current-buffer if current buffer is not the *mini-buffer*
   else return buffer before minibuf is activated."
@@ -100,8 +87,6 @@ imenu index, then jumps to that symbol's location."
                   (line-beginning-position (+ 1 arg)))
   (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
 
-(global-set-key (kbd "C-c C-k") 'copy-line)
-
 ;;A better comment function
 (defun my-comment-line-or-region ()
   (interactive "*")
@@ -114,39 +99,12 @@ imenu index, then jumps to that symbol's location."
         (move-end-of-line nil)
         (comment-dwim nil)
         ))))
-(global-set-key (read-kbd-macro "M-;") 'my-comment-line-or-region)
 
-;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
-(defvar programming-major-modes
-  '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
-                    conf-mode asm-mode makefile-mode)
-  "List of programming modes")
-
-(defun prog-mode-settings ()
-  "special settings for programming modes."
-  (when (memq major-mode programming-major-modes)
-    ;;No stray edits.Toggle with (C-x C-q) if I want to make an edit
-    (toggle-read-only 1)
-    (which-function-mode t)
-    ;; Never use tabs to indent in prog-modes
-    (setq-default indent-tabs-mode nil)
-    (local-set-key (kbd "C-c <right>") 'hs-show-block)
-    (local-set-key (kbd "C-c <left>")  'hs-hide-block)
-    (local-set-key (kbd "C-c <up>")    'hs-hide-all)
-    (local-set-key (kbd "C-c <down>")  'hs-show-all)
-    (hs-minor-mode t)
-    (setq comment-style 'extra-line)
-    (setq comment-multi-line 't)
-    ;;Flyspell mode for comments and strings
-    (flyspell-prog-mode)
-    ;; This highlights part of line > 80 with an ugly pink color
-    ;; Remove text having this color
-    (setq whitespace-style '(lines-tail trailing))
-    (whitespace-mode)
-    (setq fill-column 80)
-    (turn-on-auto-fill)
-    (setq comment-auto-fill-only-comments t)))
-(add-hook 'find-file-hook 'prog-mode-settings)
+(defun toggle-asm-comment-char ()
+    "Toggle asm comment char in ; and @"
+    (interactive)
+    (setq asm-comment-char (if (= asm-comment-char 59) 64 59))
+    (revert-buffer nil 1))
 
 ;;Force backup of buffer after each save
 (defun force-backup-of-buffer ()
@@ -165,26 +123,5 @@ imenu index, then jumps to that symbol's location."
   (if (region-active-p)
       (kill-region (region-beginning) (region-end))
     (backward-kill-word arg)))
-
-(global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
-
-;; Column fill settings for text mode
-(add-hook 'text-mode-hook
-	  (lambda ()
-	    (setq fill-column 80)
-            (turn-on-auto-fill)))
-
-(setq whitespace-style '(trailing))
-(whitespace-mode)
-
-(add-hook 'asm-mode-hook
-          (lambda ()
-            (local-set-key (kbd "<f8>") 'toggle-asm-comment-char)))
-
-(defun toggle-asm-comment-char ()
-    "Toggle asm comment char in ; and @"
-    (interactive)
-    (setq asm-comment-char (if (= asm-comment-char 59) 64 59))
-    (revert-buffer nil 1))
 
 (provide 'utility-functions)
