@@ -142,8 +142,8 @@ imenu index, then jumps to that symbol's location."
     ;; Remove text having this color
     (setq whitespace-style '(lines-tail trailing))
     (whitespace-mode)
-    (auto-fill-mode)
     (setq fill-column 80)
+    (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)))
 (add-hook 'find-file-hook 'prog-mode-settings)
 
@@ -170,8 +170,8 @@ imenu index, then jumps to that symbol's location."
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
 	  (lambda ()
-	    (auto-fill-mode)
-	    (setq fill-column 80)))
+	    (setq fill-column 80)
+            (turn-on-auto-fill)))
 
 (setq whitespace-style '(trailing))
 (whitespace-mode)
