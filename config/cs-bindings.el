@@ -32,7 +32,10 @@
 (define-key global-map "\C-csS" 'cscope-tell-user-about-directory)
 (define-key global-map "\C-csT" 'cscope-tell-user-about-directory)
 (define-key global-map "\C-csD" 'cscope-dired-directory)
-(if (eq window-system 'nil)
-    (set-face-foreground 'cscope-line-face "green"))
+;; Colours code from wombat
+(set-face-foreground 'cscope-file-face "#e5786d")
+(set-face-foreground 'cscope-function-face "#ad7fa8")
+(set-face-foreground 'cscope-line-number-face "#f6f3e8")
+(set-face-foreground 'cscope-line-face "#f6f3e8")
 
 (provide 'cs-bindings)
