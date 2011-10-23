@@ -129,10 +129,9 @@
 	    (setq yas/trigger-key [tab])
 	    (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
 	    (define-key yas/keymap [tab] 'yas/next-field)
+            (turn-on-auto-fill)
 	    ;; flyspell mode to spell check everywhere
-	    (flyspell-mode 1)
-	    (auto-fill-mode)
-	    (setq fill-column 80)))
+	    (flyspell-mode 1)))
 
 ;; Export org table as CSV by default
 (setq org-table-export-default-format "orgtbl-to-csv")
@@ -143,7 +142,7 @@
 
 (add-to-list 'org-export-latex-classes
       '("org-article"
-         "\\documentclass{article}
+         "\\documentclass[letterpaper, 12pt]{article}
           \\usepackage{verbatim}
           \\usepackage{color}
           \\usepackage[left=1in,top=1in,right=1in,bottom=1in,head=0.2in,foot=0.2in]{geometry}"
@@ -154,5 +153,6 @@
          ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 (setq org-export-latex-todo-keyword-markup '(("NEW" . "\\new{%s}") ("DONE" . "\\done{%s}") ("TODO" . "\\todo{%s}") ("REDO" . "\\redo{%s}") ("CANCELLED" . "\\cancelled{%s}")))
-
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/inbox.org")
 (provide 'org-mode-config)
