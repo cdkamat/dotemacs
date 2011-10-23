@@ -90,11 +90,6 @@
 (color-theme-wombat)
 (add-hook 'after-make-frame-functions 'color-theme-wombat)
 
-;; PKGBUILD mode
-(autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
-(setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode))
-			       auto-mode-alist))
-
 (require 'server)
 ;; (setq server-use-tcp t)
 ;; (setq server-host "serenity")
