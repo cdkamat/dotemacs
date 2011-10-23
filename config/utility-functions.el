@@ -53,10 +53,11 @@ imenu index, then jumps to that symbol's location."
 (global-set-key (kbd "TAB") 'smart-tab)
 
 ;;Some C mode hooks
-(add-hook 'c-mode-common-hook 
+(add-hook 'c-mode-common-hook
 	  (lambda ()
 	    (c-set-style "linux")
-	    (setq c-basic-offset 4)))
+	    (setq c-basic-offset 4)
+            (local-set-key (kbd "C-c C-c") 'compile)))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string "")
