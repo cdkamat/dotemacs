@@ -1,9 +1,10 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sun, 23 October 2011 19:40:30 EDT
+;; Last modified : Sun, 23 October 2011 20:11:13 EDT
 
 ;; Color theme
 (require 'color-theme-wombat)
-(require 'folio)
+(require 'color-theme-zenburn)
+;;   (color-theme-zenburn)
 (color-theme-wombat)
 (add-hook 'after-make-frame-functions 'color-theme-wombat)
 
