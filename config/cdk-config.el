@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Sun, 23 October 2011 19:45:58 EDT
+;; Last modified : Sun, 23 October 2011 20:13:42 EDT
 
 ;; User details
 
@@ -27,8 +27,7 @@
       x-select-enable-clipboard t
       time-stamp-active 1
       time-stamp-line-limit 10
-      time-stamp-pattern "\\([Ll]ast [Mm]odified\\|[Dd]ate\\) *:
-                          %3a, %:d %:b %:Y %02H:%02M:%02S %Z$")
+      time-stamp-pattern "\\([Ll]ast [Mm]odified\\|[Dd]ate\\) *: %3a, %:d %:b %:Y %02H:%02M:%02S %Z$")
 
 ;; Everying thing in utf-8
 (prefer-coding-system 'utf-8)
