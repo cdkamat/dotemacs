@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sun, 23 October 2011 20:11:13 EDT
+;; Last modified : Sun, 23 October 2011 20:50:16 EDT
 
 ;; Color theme
 (require 'color-theme-wombat)
@@ -112,7 +112,10 @@
     (whitespace-mode)
     (setq fill-column 80)
     (turn-on-auto-fill)
-    (setq comment-auto-fill-only-comments t)))
+    (setq comment-auto-fill-only-comments t)
+    (font-lock-add-keywords nil
+                            '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+
 (add-hook 'find-file-hook 'prog-mode-settings)
 
 (provide 'mode-config)

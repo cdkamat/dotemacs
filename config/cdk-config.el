@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Sun, 23 October 2011 20:13:42 EDT
+;; Last modified : Sun, 23 October 2011 20:27:05 EDT
 
 ;; User details
 
@@ -10,8 +10,8 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1)) ;; no tool-bar
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) ;; no menu-bar
-(global-font-lock-mode 1) ;; Colours
 (show-paren-mode 1) ;;Show paren matching
+(setq font-lock-maximum-decoration t)
 (delete-selection-mode 1);;copy overwrite selected
 
 ;; Misc settings

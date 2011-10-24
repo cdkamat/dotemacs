@@ -1,5 +1,5 @@
 ;; init.el Loads everything
-;; Last modified :
+;; Last modified : Sun, 23 October 2011 20:03:29 EDT
 
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")

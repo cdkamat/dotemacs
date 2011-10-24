@@ -40,7 +40,7 @@
 (defvar wombat-green+1 "#cae682")
 (defvar wombat-green+2 "#4BC98A")
 (defvar wombat-red-1 "#e5786d")
-(defvar wombat-red "#95e454")
+(defvar wombat-red "#FF0000")
 (defvar wombat-blue-2 "#2e3436")
 (defvar wombat-blue-1 "#64a8d8")
 (defvar wombat-blue "#8ac6f2")
@@ -60,7 +60,7 @@
 (defun color-theme-wombat (&optional frame)
   "The wombat color theme for Emacs."
   (interactive)
-  ;; set font 
+  ;; set font
   (set-frame-parameter frame 'font "Consolas-12")
   (color-theme-install
    `(color-theme-wombat
@@ -79,7 +79,7 @@
      (font-lock-doc-face ((t (:foreground ,wombat-gray+1))))
      (font-lock-function-name-face ((t (:foreground ,wombat-purple-1 :bold t :italic t))))
      (font-lock-keyword-face ((t (:bold t :weight bold :foreground ,wombat-blue))))
-     (font-lock-negation-char-face ((t (:foreground ,wombat-red))))
+     (font-lock-negation-char-face ((t (:foreground ,wombat-green))))
      (font-lock-preprocessor-face ((t (:foreground ,wombat-red-1))))
      (font-lock-regexp-grouping-backslash ((t (:bold t :weight bold))))
      (font-lock-regexp-grouping-construct ((t (:bold t ,wombat-green))))
@@ -87,14 +87,14 @@
      (font-lock-type-face ((t (:foreground "#f0dfaf"))))
      (font-lock-variable-name-face ((t (:foreground ,wombat-fg))))
      (font-lock-warning-face ((t (:bold t :foreground ,wombat-red))))
-     
+
      (which-func-face ((t (:foreground "white"))))
      (which-func ((t (:foreground "white"))))
 
      ;; UI Items
      ;(border ((t (:background "#888a85"))))
      ;(fringe ((t (:background "grey10"))))
-     (minibuffer-prompt ((t (:foreground ,wombat-red :bold t))))
+     (minibuffer-prompt ((t (:foreground ,wombat-green :bold t))))
      (mode-line ((t (:background ,wombat-gray-1 :foreground ,wombat-fg))))
      (mode-line-emphasis ((t (:bold t))))
      (mode-line-highlight ((t (:background ,wombat-orange :box nil))))
@@ -113,36 +113,36 @@
 
      ;; Org-mode
      (org-hide ((t (:foreground ,wombat-bg))))
-     (org-agenda-date-today ((t (:foreground "white" 
-                               :slant italic :weight bold))) t)      
-     (org-agenda-structure ((t (:inherit font-lock-comment-face))))  
-     (org-archived ((t (:foreground "#8f8f8f"))))                    
-     (org-column ((t (:height 98 :family "DejaVu Sans Mono"))))      
-     (org-checkbox ((t (:background "#5f5f5f" :foreground "white"    
+     (org-agenda-date-today ((t (:foreground "white"
+                               :slant italic :weight bold))) t)
+     (org-agenda-structure ((t (:inherit font-lock-comment-face))))
+     (org-archived ((t (:foreground "#8f8f8f"))))
+     (org-column ((t (:height 98 :family "DejaVu Sans Mono"))))
+     (org-checkbox ((t (:background "#5f5f5f" :foreground "white"
                       :box (:line-width 1 :style released-button)))))
-     (org-date ((t (:foreground "#8cd0d3" :underline t))))           
-     (org-deadline-announce ((t (:foreground "#bc8383"))))           
-     (org-done ((t (:bold t :weight bold :foreground "#afd8af"))))   
-     (org-formula ((t (:foreground "#d0bf8f"))))                     
-     (org-headline-done ((t (:foreground "#afd8af"))))               
-     (org-level-1 ((t (:foreground "#dfaf8f"))))                     
-     (org-level-2 ((t (:foreground "#f0dfaf"))))                     
-     (org-level-3 ((t (:foreground "#8cd0d3"))))                     
-     (org-level-4 ((t (:foreground "#93e0e3"))))                     
-     (org-level-5 ((t (:foreground "#7cb8bb"))))                     
-     (org-level-6 ((t (:foreground "#6ca0a3"))))                     
-     (org-level-7 ((t (:foreground "#5c888b"))))                     
-     (org-level-8 ((t (:foreground "#4c7073"))))                     
-     (org-link ((t (:foreground "#d0bf8f" :underline t))))           
+     (org-date ((t (:foreground "#8cd0d3" :underline t))))
+     (org-deadline-announce ((t (:foreground "#bc8383"))))
+     (org-done ((t (:bold t :weight bold :foreground "#afd8af"))))
+     (org-formula ((t (:foreground "#d0bf8f"))))
+     (org-headline-done ((t (:foreground "#afd8af"))))
+     (org-level-1 ((t (:foreground "#dfaf8f"))))
+     (org-level-2 ((t (:foreground "#f0dfaf"))))
+     (org-level-3 ((t (:foreground "#8cd0d3"))))
+     (org-level-4 ((t (:foreground "#93e0e3"))))
+     (org-level-5 ((t (:foreground "#7cb8bb"))))
+     (org-level-6 ((t (:foreground "#6ca0a3"))))
+     (org-level-7 ((t (:foreground "#5c888b"))))
+     (org-level-8 ((t (:foreground "#4c7073"))))
+     (org-link ((t (:foreground "#d0bf8f" :underline t))))
      ;'(org-priority faces                                            TODO
-     (org-scheduled ((t (:foreground "#bfebbf"))))                   
-     (org-scheduled-previously ((t (:foreground "#8c5353"))))        
-     (org-scheduled-today ((t (:foreground "#94bff3"))))             
-     (org-special-keyword ((t (:foreground "#e0cf9f"))))             
-     (org-table ((t (:foreground "#9fc59f"))))                       
-     (org-tag ((t (:bold t :weight bold))))                          
-     (org-time-grid ((t (:foreground "#ffc9a4"))))                   
-     (org-upcoming-deadline ((t (:inherit font-lock-keyword-face)))) 
+     (org-scheduled ((t (:foreground "#bfebbf"))))
+     (org-scheduled-previously ((t (:foreground "#8c5353"))))
+     (org-scheduled-today ((t (:foreground "#94bff3"))))
+     (org-special-keyword ((t (:foreground "#e0cf9f"))))
+     (org-table ((t (:foreground "#9fc59f"))))
+     (org-tag ((t (:bold t :weight bold))))
+     (org-time-grid ((t (:foreground "#ffc9a4"))))
+     (org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
      (org-warning ((t (:bold t :foreground "#cc9393" :weight bold))))
 
      ;(comint-highlight-input ((t (:italic t :bold t))))
@@ -161,7 +161,7 @@
 
      (info-xref ((t (:foreground ,wombat-blue))))
      (info-xref-visited ((t (:foreground ,wombat-purple-1))))
-     
+
      ;; Eshell
      (eshell-prompt-face ((t (:foreground "#f0dfaf"))))
      (eshell-ls-archive-face ((t (:foreground "#c3bf9f" :weight bold))))
