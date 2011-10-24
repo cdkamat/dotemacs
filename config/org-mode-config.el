@@ -23,7 +23,7 @@
 			      ("c" "Call" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %? :@Call: %i")
 			      ("m" "Meeting" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %^{Meeting For} :@Call: %^{Time}t %^{Location}p  %i")
 			      ("e" "Email" entry (file+headline "~/Documents/Notes/remember.org" "Email") "* %? :@Email: %i")
-			      ("n" "Note" entry (file+headline "~/Documents/Notes/Notes.org" "Notes") "* %?  %i") 
+			      ("n" "Note" entry (file+headline "~/Documents/Notes/Notes.org" "Notes") "* %?  %i")
 			      ("b" "Blog" entry (file+headline "~/Documents/Notes/Notes.org" "Blog") "* %?  %i")))
 
 ;; org-todo settings
@@ -129,7 +129,6 @@
 	    (setq yas/trigger-key [tab])
 	    (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
 	    (define-key yas/keymap [tab] 'yas/next-field)
-            (turn-on-auto-fill)
 	    ;; flyspell mode to spell check everywhere
 	    (flyspell-mode 1)))
 
