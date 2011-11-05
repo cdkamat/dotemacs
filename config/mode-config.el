@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sun, 23 October 2011 20:50:16 EDT
+;; Last modified : Wed, 2 November 2011 20:00:52 EDT
 
 ;; Color theme
 (require 'color-theme-wombat)
@@ -106,15 +106,15 @@
     (setq comment-multi-line 't)
     ;;Flyspell mode for comments and strings
     (flyspell-prog-mode)
-    ;; This highlights part of line > 80 with an ugly pink color
+    ;; This highlights lines > 80 with an ugly pink color
     ;; Remove text having this color
-    (setq whitespace-style '(lines-tail trailing))
+    (setq whitespace-style '(lines trailing))
     (whitespace-mode)
     (setq fill-column 80)
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
     (font-lock-add-keywords nil
-                            '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
