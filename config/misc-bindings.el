@@ -1,5 +1,5 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Sun, 23 October 2011 19:40:13 EDT
+;; Last modified : Thu, 3 November 2011 22:37:39 EDT
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -60,5 +60,8 @@
 ;;Insert current buffer name in minibuf on F3
 (global-set-key [f3] (lambda () (interactive)
 	 (insert (buffer-name (current-buffer-not-mini)))))
+
+;; Enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
 
 (provide 'misc-bindings)
