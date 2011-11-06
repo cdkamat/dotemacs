@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Wed, 2 November 2011 20:00:52 EDT
+;; Last modified : Sat, 5 November 2011 20:00:13 EDT
 
 ;; Color theme
 (require 'color-theme-wombat)
@@ -56,6 +56,9 @@
 
 (icomplete-mode)
 (eval-after-load "icomplete" '(progn (require 'icomplete+)))
+
+;; ibuffer mode settings
+(setq ibuffer-default-sorting-mode 'major-mode)
 
 (require 'latex-mode-config)
 
