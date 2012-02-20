@@ -111,7 +111,7 @@
     (flyspell-prog-mode)
     ;; This highlights lines > 80 with an ugly pink color
     ;; Remove text having this color
-    (setq whitespace-style '(lines trailing))
+    (setq whitespace-style '(face lines trailing))
     (whitespace-mode)
     (setq fill-column 80)
     (turn-on-auto-fill)

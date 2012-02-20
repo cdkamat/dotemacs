@@ -60,7 +60,7 @@
 (add-hook 'before-save-hook 'time-stamp)
 
 ;; Whitespace settings
-(setq whitespace-style '(trailing))
+(setq whitespace-style '(face trailing))
 (whitespace-mode)
 
 (provide 'cdk-config)
