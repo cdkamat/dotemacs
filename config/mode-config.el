@@ -70,6 +70,10 @@
 ;; Magit
 (require 'magit)
 
+;; Doxygen support
+(require 'doxymacs)
+
+
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
 	  (lambda ()
@@ -117,7 +121,9 @@
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
     (font-lock-add-keywords nil
-          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
+    (doxymacs-mode t)
+    (doxymacs-font-lock)))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
