@@ -7,7 +7,7 @@
 (ac-flyspell-workaround)
 (global-auto-complete-mode t)
 (ac-config-default)
-(setq ac-auto-start 3
+(setq ac-auto-start nil
       ac-auto-show-menu 1
       ac-use-menu-map t)
 
