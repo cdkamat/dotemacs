@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sat, 5 November 2011 20:00:13 EDT
+;; Last modified : Wed, 11 January 2012 00:17:45 EST
 
 ;; Color theme
 (require 'color-theme-wombat)
@@ -27,8 +27,8 @@
 
 ;;settings for yasnippet
 (require 'yasnippet) ;; not yasnippet-bundle
-(global-set-key (kbd "S-TAB") 'yas/trigger-key)
-(yas/initialize)
+(yas/global-mode)
+(global-set-key (kbd "<s-tab>") 'yas/expand)
 (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 ;;Cscope
