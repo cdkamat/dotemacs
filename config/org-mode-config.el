@@ -19,12 +19,12 @@
 (global-set-key (kbd "C-c r") 'org-capture)
 (global-set-key (kbd "<f12>") 'org-agenda-list)
 
-(setq org-capture-templates `(("a" "Assignment" entry (file "~/Documents/Notes/assignments.org") "* TODO %^{Assignment desc} \nDEADLINE: %^T %?")
-			      ("c" "Call" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %? :@Call: %i")
-			      ("m" "Meeting" entry (file+headline "~/Documents/Notes/remember.org" "Call") "* %^{Meeting For} :@Call: %^{Time}t %^{Location}p  %i")
-			      ("e" "Email" entry (file+headline "~/Documents/Notes/remember.org" "Email") "* %? :@Email: %i")
-			      ("n" "Note" entry (file+headline "~/Documents/Notes/Notes.org" "Notes") "* %?  %i")
-			      ("b" "Blog" entry (file+headline "~/Documents/Notes/Notes.org" "Blog") "* %?  %i")))
+(setq org-capture-templates `(("a" "Assignment" entry (file (concat org-directory "/assignments.org")) "* TODO %^{Assignment desc} \nDEADLINE: %^T %?")
+			      ("c" "Call" entry (file+headline (concat org-directory "/remember.org") "Call") "* %? :@Call: %i")
+			      ("m" "Meeting" entry (file+headline (concat org-directory "/remember.org") "Call") "* %^{Meeting For} :@Call: %^{Time}t %^{Location}p  %i")
+			      ("e" "Email" entry (file+headline (concat org-directory "/remember.org") "Email") "* %? :@Email: %i")
+			      ("n" "Note" entry (file+headline (concat org-directory "/Notes.org") "Notes") "* %?  %i")
+			      ("b" "Blog" entry (file+headline (concat org-directory "/Notes.org") "Blog")"* %?  %i")))
 
 ;; org-todo settings
 ;; I need more todo keywords than present by default
@@ -151,7 +151,11 @@
          ("\\paragraph{%s}" . "\\paragraph*{%s}")
          ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-(setq org-export-latex-todo-keyword-markup '(("NEW" . "\\new{%s}") ("DONE" . "\\done{%s}") ("TODO" . "\\todo{%s}") ("REDO" . "\\redo{%s}") ("CANCELLED" . "\\cancelled{%s}")))
+(setq org-export-latex-todo-keyword-markup '(("NEW" . "\\new{%s}")
+                                             ("DONE" . "\\done{%s}")
+                                             ("TODO" . "\\todo{%s}")
+                                             ("REDO" . "\\redo{%s}")
+                                             ("CANCELLED" . "\\cancelled{%s}")))
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/inbox.org")
 (provide 'org-mode-config)
