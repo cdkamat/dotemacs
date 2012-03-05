@@ -1,5 +1,5 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Thu, 3 November 2011 22:37:39 EDT
+;; Last modified : Mon, 5 March 2012 11:58:24 EST
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -55,7 +55,6 @@
 (global-set-key (kbd "TAB") 'smart-tab)
 (define-key global-map "\M-s" 'isearch-forward-at-point)
 (global-set-key (kbd "C-c C-k") 'copy-line)
-(global-set-key (read-kbd-macro "M-;") 'my-comment-line-or-region)
 (global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
 ;;Insert current buffer name in minibuf on F3
 (global-set-key [f3] (lambda () (interactive)

@@ -1,5 +1,5 @@
 ;; utility-functions.el - contains the functions that I use
-;; Last modified : Sun, 23 October 2011 19:39:41 EDT
+;; Last modified : Mon, 5 March 2012 11:58:01 EST
 
 (require 'thingatpt)
 (require 'imenu)
@@ -86,19 +86,6 @@ imenu index, then jumps to that symbol's location."
   (kill-ring-save (line-beginning-position)
                   (line-beginning-position (+ 1 arg)))
   (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
-
-;;A better comment function
-(defun my-comment-line-or-region ()
-  (interactive "*")
-  (if (and mark-active transient-mark-mode)
-      (comment-or-uncomment-region (region-beginning) (region-end) nil)
-    (progn
-      (save-excursion
-        (move-beginning-of-line nil)
-        (set-mark-command nil)
-        (move-end-of-line nil)
-        (comment-dwim nil)
-        ))))
 
 (defun toggle-asm-comment-char ()
     "Toggle asm comment char in ; and @"
