@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Wed, 11 January 2012 00:17:45 EST
+;; Last modified : Tue, 3 April 2012 11:47:43 EDT
 
 ;; Color theme
 (require 'color-theme-wombat)
@@ -73,7 +73,6 @@
 ;; Doxygen support
 (require 'doxymacs)
 
-
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
 	  (lambda ()
@@ -88,7 +87,11 @@
 
 (add-hook 'asm-mode-hook
           (lambda ()
-            (local-set-key (kbd "<f8>") 'toggle-asm-comment-char)))
+            (local-set-key (kbd "<f8>") 'toggle-asm-comment-char)
+            (custom-set-variables
+             '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
+                                       64 68 72 76 80 84 88 92 96 100 104 108
+                                       112 116 120))))))
 
 ;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
 (defvar programming-major-modes
