@@ -3,15 +3,17 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
 
+(ac-config-default)
 (setq ac-comphist-file (concat cache-dir "ac-comphist.dat"))
 (ac-flyspell-workaround)
 (global-auto-complete-mode t)
-(ac-config-default)
-(setq ac-auto-start nil
-      ac-auto-show-menu 1
-      ac-use-menu-map t)
+(setq ac-auto-show-menu t
+      ac-dwim t
+      ac-use-menu-map t
+      ac-quick-help-delay 1
+      ac-quick-help-height 60)
 
-(dolist (mode '(org-mode text-mode asm-mode))
+(dolist (mode '(magit-log-edit-mode org-mode text-mode asm-mode))
   (add-to-list 'ac-modes mode))
 
 ;; Key Bindings
