@@ -1,5 +1,5 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Mon, 5 March 2012 11:58:24 EST
+;; Last modified : Tue, 3 July 2012 15:16:17 PDT
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -52,7 +52,6 @@
 
 ;; Keybinding for functions defined in utility-functions.el
 
-(global-set-key (kbd "TAB") 'smart-tab)
 (define-key global-map "\M-s" 'isearch-forward-at-point)
 (global-set-key (kbd "C-c C-k") 'copy-line)
 (global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)

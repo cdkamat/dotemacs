@@ -1,5 +1,5 @@
 ;; utility-functions.el - contains the functions that I use
-;; Last modified : Mon, 5 March 2012 11:58:01 EST
+;; Last modified : Tue, 3 July 2012 16:08:09 PDT
 
 (require 'thingatpt)
 (require 'imenu)
@@ -34,23 +34,6 @@ imenu index, then jumps to that symbol's location."
          try-complete-file-name
          try-complete-lisp-symbol-partially
          try-complete-lisp-symbol))
-
-;;function to implement a smarter TAB
-(defun smart-tab ()
-  "This smart tab is minibuffer compliant: it acts as usual in
-  the minibuffer. Else, if mark is active, indents region. Else if
-  point is at the end of a symbol, expands it. Else indents the
-  current line."
-  (interactive)
-  (if (minibufferp)
-      (unless (minibuffer-complete)
-	(hippie-expand nil))
-    (if mark-active
-	(indent-region (region-beginning)
-		       (region-end))
-      (if (looking-at "\\_>")
-	  (auto-complete)
-	(indent-for-tab-command)))))
 
 ;; I-search with initial contents
 (defvar isearch-initial-string "")

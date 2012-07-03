@@ -111,6 +111,7 @@
     (local-set-key (kbd "C-c <left>")  'hs-hide-block)
     (local-set-key (kbd "C-c <up>")    'hs-hide-all)
     (local-set-key (kbd "C-c <down>")  'hs-show-all)
+    (local-set-key (kbd "RET") 'newline-and-indent)
     (hs-minor-mode t)
     (setq comment-style 'extra-line)
     (setq comment-multi-line 't)
