@@ -6,10 +6,11 @@
 (setq ac-comphist-file (concat cache-dir "ac-comphist.dat"))
 (ac-config-default)
 (ac-flyspell-workaround)
-(setq ac-auto-show-menu t
+(setq ac-auto-start nil
+      ac-auto-show-menu t
       ac-dwim t
       ac-use-menu-map t
-      ac-quick-help-delay 1
+      ac-quick-help-delay 5
       ac-quick-help-height 60)
 
 ;;----------------------------------------------------------------------------
