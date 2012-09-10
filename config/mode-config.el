@@ -1,9 +1,11 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sun, 9 September 2012 22:21:37 EDT
+;; Last modified : Sun, 9 September 2012 23:01:35 EDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
 (load-theme 'cdk-wombat t)
+(set-frame-font "Ubuntu Mono-12")
+(add-to-list 'default-frame-alist '(font . "Ubuntu Mono-12"))
 
 (require 'saveplace)
 (setq-default save-place t)

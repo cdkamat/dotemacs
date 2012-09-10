@@ -6,7 +6,7 @@
 ;; Ported to GNU Emacs by Chris Charles
 ;; Ported to GNU Emacs 24's built-in theme system by Jim Myhrberg (@jimeh)
 
-;; Last modified: Sun, 9 September 2012 22:37:38 EDT
+;; Last modified: Sun, 9 September 2012 22:54:11 EDT
 
 ;;; Code:
 
@@ -28,7 +28,6 @@
       (blue "#8ac6f2")
       (purple "#b294bb"))
 
-  (set-frame-parameter nil 'font "Ubuntu Mono-13")
   (custom-theme-set-faces
    'cdk-wombat
 
