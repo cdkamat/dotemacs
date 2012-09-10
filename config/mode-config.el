@@ -1,12 +1,9 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Tue, 3 April 2012 11:47:43 EDT
+;; Last modified : Sun, 9 September 2012 22:21:37 EDT
 
 ;; Color theme
-(require 'color-theme-wombat)
-(require 'color-theme-zenburn)
-;;   (color-theme-zenburn)
-(color-theme-wombat)
-(add-hook 'after-make-frame-functions 'color-theme-wombat)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
+(load-theme 'cdk-wombat t)
 
 (require 'saveplace)
 (setq-default save-place t)
@@ -71,7 +68,7 @@
 (require 'magit)
 
 ;; Doxygen support
-(require 'doxymacs)
+;; (require 'doxymacs)
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
@@ -126,10 +123,10 @@
     (setq comment-auto-fill-only-comments t)
     (font-lock-add-keywords nil
           '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
-    (doxymacs-mode t)
-    (doxymacs-font-lock)))
+    ;; (doxymacs-mode t)
+    ;; (doxymacs-font-lock)
+    ))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
 (provide 'mode-config)
-
