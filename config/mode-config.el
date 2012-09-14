@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sun, 9 September 2012 23:01:35 EDT
+;; Last modified : Thu, 13 September 2012 19:09:29 EDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -70,7 +70,7 @@
 (require 'magit)
 
 ;; Doxygen support
-;; (require 'doxymacs)
+(require 'doxymacs)
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
@@ -125,9 +125,8 @@
     (setq comment-auto-fill-only-comments t)
     (font-lock-add-keywords nil
           '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
-    ;; (doxymacs-mode t)
-    ;; (doxymacs-font-lock)
-    ))
+    (doxymacs-mode t)
+    (doxymacs-font-lock)))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
