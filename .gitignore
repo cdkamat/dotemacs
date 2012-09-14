@@ -16,3 +16,4 @@ tramp
 /cache
 /semanticdb
 *.dat
+/elpa
