@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Thu, 13 September 2012 19:09:29 EDT
+;; Last modified : Fri, 5 October 2012 21:42:48 EDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -68,6 +68,7 @@
 
 ;; Magit
 (require 'magit)
+(require 'magit-blame)
 
 ;; Doxygen support
 (require 'doxymacs)
