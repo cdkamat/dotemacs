@@ -67,8 +67,8 @@
 (require 'auto-comp-config)
 
 ;; Magit
-(require 'magit)
-(require 'magit-blame)
+(require 'magit nil 'noerror)
+(require 'magit-blame nil 'noerror)
 
 ;; Doxygen support
 (require 'doxymacs)
