@@ -1,21 +1,27 @@
-/auto-save-list
-/.session
+# Files
+
 *.elc
-CVS
-.svn
 *~
-.cvsignore
 .*.lock
 bookmarks.bmk
-/.emacs-backups
-/.org-id-locations
 session.*
 org-clock-save
-/server
-tramp
-/cache
-/semanticdb
 *.dat
+tramp
+
+# Unwanted folders
+
+/auto-save-list
+/.session
+/.org-id-locations
+/server
+/semanticdb
 /elpa
+/eshell
+
+# Created by us, but should not pushed
+
+/.emacs-backups
+/cache
 /el-get
 /plugins/el-get
