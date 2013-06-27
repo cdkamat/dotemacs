@@ -32,9 +32,9 @@
 
 ;;settings for yasnippet
 (require 'yasnippet) ;; not yasnippet-bundle
-(yas/global-mode)
+(yas-global-mode)
 (global-set-key (kbd "<s-tab>") 'yas/expand)
-(yas/load-directory "~/.emacs.d/plugins/el-get/yasnippet/snippets")
+(yas-load-directory "~/.emacs.d/plugins/el-get/yasnippet/snippets")
 
 ;;Cscope
 (require 'cs-bindings)
