@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Mon, 20 February 2012 03:06:22 EST
+;; Last modified : Wed, 26 June 2013 17:31:35 PDT
 
 ;; User details
 
@@ -55,7 +55,6 @@
       vc-make-backup-files t);;Make backup even if under version control
 
 ;; Hooks
-(add-hook 'before-save-hook 'force-backup-of-buffer)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'time-stamp)
 

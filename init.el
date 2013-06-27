@@ -1,5 +1,5 @@
 ;; init.el Loads everything
-;; Last modified : Fri, 14 September 2012 02:13:48 EDT
+;; Last modified : Wed, 26 June 2013 17:31:00 PDT
 
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")
@@ -12,11 +12,11 @@
 ;; CDK customizations
 (require 'cdk-config)
 
-;; Mode confiturations
-(require 'mode-config)
-
 ;;Custom functions and key bindings
 (require 'utility-functions)
+
+;; Mode confiturations
+(require 'mode-config)
 
 ;;Custom keybindings
 (require 'misc-bindings)

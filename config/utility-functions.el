@@ -79,6 +79,7 @@ imenu index, then jumps to that symbol's location."
 ;;Force backup of buffer after each save
 (defun force-backup-of-buffer ()
     (setq buffer-backed-up nil))
+(add-hook 'before-save-hook 'force-backup-of-buffer)
 
 (defun sudo-edit (&optional arg)
   "Edit as root"
