@@ -70,8 +70,6 @@
 (require 'magit nil 'noerror)
 (require 'magit-blame nil 'noerror)
 
-;; Doxygen support
-(require 'doxymacs)
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
@@ -125,9 +123,7 @@
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
     (font-lock-add-keywords nil
-          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
-    (doxymacs-mode t)
-    (doxymacs-font-lock)))
+          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
