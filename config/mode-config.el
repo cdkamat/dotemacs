@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Wed, 26 June 2013 00:22:51 PDT
+;; Last modified : Wed, 26 June 2013 19:04:31 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -101,7 +101,8 @@
   "special settings for programming modes."
   (when (memq major-mode programming-major-modes)
     ;;No stray edits.Toggle with (C-x C-q) if I want to make an edit
-    (read-only-mode 1)
+    (if (not (equal major-mode 'emacs-lisp-mode))
+      (read-only-mode 1))
     (which-function-mode t)
     ;; Never use tabs to indent in prog-modes
     (setq-default indent-tabs-mode nil)

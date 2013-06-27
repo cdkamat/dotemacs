@@ -17,3 +17,5 @@ tramp
 /semanticdb
 *.dat
 /elpa
+/el-get
+/plugins/el-get

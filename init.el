@@ -1,5 +1,5 @@
 ;; init.el Loads everything
-;; Last modified : Wed, 26 June 2013 17:31:00 PDT
+;; Last modified : Wed, 26 June 2013 18:50:15 PDT
 
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")
@@ -21,7 +21,13 @@
 ;;Custom keybindings
 (require 'misc-bindings)
 
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; el-get
+(unless (require 'el-get nil t)
+  (setq el-get-install-branch "master")
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (eval-print-last-sexp))
+  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
+
+(setq el-get-dir "~/.emacs.d/plugins/el-get/")
