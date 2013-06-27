@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Thu, 27 June 2013 01:10:29 PDT
+;; Last modified : Thu, 27 June 2013 01:18:39 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -34,7 +34,7 @@
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/global-mode)
 (global-set-key (kbd "<s-tab>") 'yas/expand)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/plugins/el-get/yasnippet/snippets")
 
 ;;Cscope
 (require 'cs-bindings)
