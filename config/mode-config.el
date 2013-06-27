@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Thu, 27 June 2013 02:05:23 PDT
+;; Last modified : Thu, 27 June 2013 11:08:32 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -76,6 +76,10 @@
 (require 'magit nil 'noerror)
 (require 'magit-blame nil 'noerror)
 
+;; Enable elpy for python
+(require 'elpy nil 'noerror)
+(elpy-enable)
+
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
 	  (lambda ()
@@ -132,8 +136,5 @@
           '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
-
-;; Enable elpy for python
-(elpy-enable)
 
 (provide 'mode-config)
