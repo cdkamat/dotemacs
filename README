@@ -1,3 +1,27 @@
-This repository contains my emacs customization files.
---CDK
+# Last modified: Thu, 27 June 2013 02:18:16 PDT
+# Author : Chinmay Kamat (@cdkamat)
 
+This repository contains my Emacs customizations and configurations. The
+current version of the configuration is based on the el-get package manager.
+
+The general structure of directories is :
+
+config/  -- contains all my customizations and configurations
+plugins/ -- external packages installed either by el-get or placed manually if
+            not found on el-get
+plugins/el-get -- Default path for all el-get installs (this directory needs to
+                  be created)
+cache/   -- Temp files (This needs to be created)
+init.el  -- Config starts loading from this file
+
+el-get will be installed the first time Emacs is started with this
+configuration.
+
+For this configuration to work sanely, the following packages must be
+installed using el-get :
+
+- magit
+- auto-complete
+- yasnippet
+- icomplete+
+- elpy
