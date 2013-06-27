@@ -1,11 +1,17 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Wed, 26 June 2013 19:04:31 PDT
+;; Last modified : Thu, 27 June 2013 01:10:29 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
 (load-theme 'cdk-wombat t)
 (set-frame-font "Ubuntu Mono-12")
 (add-to-list 'default-frame-alist '(font . "Ubuntu Mono-12"))
+
+;; Setting for Mac OS X
+(if (eq system-type 'darwin)
+    (progn
+      (set-frame-font "Monaco-12")
+      (add-to-list 'default-frame-alist '(font . "Monaco-12"))))
 
 (require 'saveplace)
 (setq-default save-place t)
@@ -69,7 +75,6 @@
 ;; Magit
 (require 'magit nil 'noerror)
 (require 'magit-blame nil 'noerror)
-
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook

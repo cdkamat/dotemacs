@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Wed, 26 June 2013 17:31:35 PDT
+;; Last modified : Thu, 27 June 2013 01:11:06 PDT
 
 ;; User details
 
@@ -28,6 +28,13 @@
       time-stamp-active 1
       time-stamp-line-limit 10
       time-stamp-pattern "\\([Ll]ast [Mm]odified\\|Date\\|@date\\) *[:]* %3a, %:d %:b %:Y %02H:%02M:%02S %Z$")
+
+;; Mac OS X specific settings
+
+(if (eq system-type 'darwin)
+    (progn
+      (setq visible-bell nil)
+      (setq ring-bell-function #'ignore)))
 
 ;; Everying thing in utf-8
 (prefer-coding-system 'utf-8)
