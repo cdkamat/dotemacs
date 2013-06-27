@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Thu, 27 June 2013 01:18:39 PDT
+;; Last modified : Thu, 27 June 2013 02:05:23 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -132,5 +132,8 @@
           '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
+
+;; Enable elpy for python
+(elpy-enable)
 
 (provide 'mode-config)
