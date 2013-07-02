@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Thu, 27 June 2013 11:08:32 PDT
+;; Last modified : Mon, 1 July 2013 12:51:38 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -85,12 +85,21 @@
 	  (lambda ()
 	    (setq fill-column 80)
             (turn-on-auto-fill)))
+
 ;;Some C mode hooks
+(require 'google-c-style)
 (add-hook 'c-mode-common-hook
 	  (lambda ()
 	    (c-set-style "linux")
 	    (setq c-basic-offset 4)
-            (local-set-key (kbd "C-c C-c") 'compile)))
+            (local-set-key (kbd "C-c C-c") 'compile)
+            (let ((filename (buffer-file-name)))
+              ;; Enable google-style for the appropriate files
+              (when (and filename
+                         (string-match (expand-file-name "~/src/nutanix")
+                                       filename))
+                (google-set-c-style)))))
+
 
 (add-hook 'asm-mode-hook
           (lambda ()
