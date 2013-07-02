@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Mon, 1 July 2013 17:20:36 PDT
+;; Last modified : Mon, 1 July 2013 17:41:39 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -112,7 +112,7 @@
 ;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
 (defvar programming-major-modes
   '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
-                    conf-mode asm-mode)
+                    conf-mode asm-mode python-mode)
   "List of programming modes")
 
 (defun prog-mode-settings ()
