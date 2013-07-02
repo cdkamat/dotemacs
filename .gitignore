@@ -3,7 +3,7 @@
 *.elc
 *~
 .*.lock
-bookmarks.bmk
+bookmarks*
 session.*
 org-clock-save
 *.dat
