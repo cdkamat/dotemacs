@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Mon, 1 July 2013 17:41:39 PDT
+;; Last modified : Tue, 2 July 2013 18:36:29 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -79,6 +79,9 @@
 ;; Enable elpy for python
 (require 'elpy nil 'noerror)
 (elpy-enable)
+
+;; Proto buf mode
+(require 'protobuf-mode nil 'noerror)
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
