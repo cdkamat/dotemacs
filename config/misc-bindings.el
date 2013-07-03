@@ -1,5 +1,5 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Wed, 26 June 2013 18:01:39 PDT
+;; Last modified : Tue, 2 July 2013 20:34:37 PDT
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -61,5 +61,12 @@
 
 ;; Enable narrow-to-region
 (put 'narrow-to-region 'disabled nil)
+
+;; OS X binding changes for CMD and Meta
+(if (eq system-type 'darwin)
+    (progn
+      (setq mac-command-modifier 'meta)
+      (setq mac-option-modifier 'super)))
+
 
 (provide 'misc-bindings)
