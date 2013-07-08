@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Tue, 2 July 2013 18:36:29 PDT
+;; Last modified : Mon, 8 July 2013 11:24:13 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -82,6 +82,7 @@
 
 ;; Proto buf mode
 (require 'protobuf-mode nil 'noerror)
+(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
 
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
