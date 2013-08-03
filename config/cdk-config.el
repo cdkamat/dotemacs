@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Thu, 27 June 2013 01:11:06 PDT
+;; Last modified : Thu, 1 August 2013 14:43:00 PDT
 
 ;; User details
 
@@ -68,5 +68,7 @@
 ;; Whitespace settings
 (setq whitespace-style '(face trailing))
 (whitespace-mode)
+(defadvice terminal-init-xterm (after select-shift-up activate)
+      (define-key input-decode-map "\e[1;2A" [S-up]))
 
 (provide 'cdk-config)
