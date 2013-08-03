@@ -31,6 +31,7 @@
 (ac-set-trigger-key "TAB")
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
+(add-to-list 'ac-sources 'ac-source-semantic)
 (define-key ac-completing-map [tab] 'ac-complete)
 
 (provide 'auto-comp-config)

@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sat, 13 July 2013 23:23:34 PDT
+;; Last modified : Sat, 3 August 2013 15:32:29 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -121,7 +121,7 @@
 
 ;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
 (defvar programming-major-modes
-  '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
+  '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode java-mode
                     conf-mode asm-mode python-mode)
   "List of programming modes")
 
@@ -139,6 +139,7 @@
     (local-set-key (kbd "C-c <up>")    'hs-hide-all)
     (local-set-key (kbd "C-c <down>")  'hs-show-all)
     (local-set-key (kbd "RET") 'newline-and-indent)
+    (local-set-key (kbd "M-,") 'pop-tag-mark)
     (hs-minor-mode t)
     (setq comment-style 'extra-line)
     (setq comment-multi-line 't)
@@ -151,6 +152,8 @@
     (setq fill-column 80)
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
+    (semantic-mode 1)
+    (add-hook 'speedbar-load-hook (lambda () (require 'semantic/sb)))
     (font-lock-add-keywords nil
           '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
