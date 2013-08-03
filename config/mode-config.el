@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Mon, 8 July 2013 11:24:13 PDT
+;; Last modified : Sat, 13 July 2013 23:23:34 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -71,6 +71,8 @@
 
 ;; Auto-complete mode
 (require 'auto-comp-config)
+(require 'auto-complete-latex nil 'noerror)
+(add-hook 'latex-mode-hook 'ac-l-setup)
 
 ;; Magit
 (require 'magit nil 'noerror)
