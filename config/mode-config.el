@@ -84,6 +84,10 @@
 (require 'protobuf-mode nil 'noerror)
 (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
 
+;; exec-path-from-shell
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 ;; Column fill settings for text mode
 (add-hook 'text-mode-hook
 	  (lambda ()
