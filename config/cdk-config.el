@@ -1,10 +1,38 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Thu, 1 August 2013 14:43:00 PDT
+;; Last modified : Sat, 3 August 2013 16:19:45 PDT
 
 ;; User details
 
 (setq user-full-name "Chinmay Kamat")
 (setq user-mail-address "chinmaykamat@gmail.com")
+
+;; Boot-strapping the config
+(unless (file-exists-p (concat cdk-lisp-dir "cache"))
+  (make-directory "cache" cdk-lisp-dir))
+(unless (file-exists-p (concat cdk-lisp-dir "plugins/el-get"))
+  (make-directory "el-get" (concat cdk-lisp-dir "plugins")))
+
+;; el-get bootstrap
+(unless (require 'el-get nil t)
+  (setq el-get-install-branch "master")
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (end-of-buffer)
+    (eval-print-last-sexp))
+  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
+
+(setq el-get-dir "~/.emacs.d/plugins/el-get/")
+
+;; install all necessary packages
+(defvar cdk-el-get-packages)
+(setq cdk-el-get-packages
+      (append
+       '(magit auto-complete auto-complete-latex yasnippet icomplete+
+               elpy protobuf-mode)
+       (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get 'sync cdk-el-get-packages)
 
 ;; UI
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll-bar

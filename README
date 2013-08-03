@@ -1,4 +1,4 @@
-# Last modified: Thu, 27 June 2013 02:18:16 PDT
+# Last modified: Sat, 3 August 2013 16:32:12 PDT
 # Author : Chinmay Kamat (@cdkamat)
 
 This repository contains my Emacs customizations and configurations. The
@@ -9,19 +9,18 @@ The general structure of directories is :
 config/  -- contains all my customizations and configurations
 plugins/ -- external packages installed either by el-get or placed manually if
             not found on el-get
-plugins/el-get -- Default path for all el-get installs (this directory needs to
-                  be created)
-cache/   -- Temp files (This needs to be created)
+plugins/el-get -- Default path for all el-get installs
+cache/   -- Temp files
 init.el  -- Config starts loading from this file
 
-el-get will be installed the first time Emacs is started with this
-configuration.
+el-get and all the required pacakages will be installed the first time Emacs is
+started with this configuration.
 
-For this configuration to work sanely, the following packages must be
-installed using el-get :
-
-- magit
+This configuration currently installs the following packages using el-get:
 - auto-complete
-- yasnippet
-- icomplete+
+- auto-complete-latex
 - elpy
+- icomplete+
+- magit
+- protobuf-mode
+- yasnippet
