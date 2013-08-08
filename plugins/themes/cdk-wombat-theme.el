@@ -6,7 +6,7 @@
 ;; Ported to GNU Emacs by Chris Charles
 ;; Ported to GNU Emacs 24's built-in theme system by Jim Myhrberg (@jimeh)
 
-;; Last modified: Thu, 11 July 2013 16:04:09 PDT
+;; Last modified: Mon, 5 August 2013 13:33:50 PDT
 
 ;;; Code:
 
@@ -48,7 +48,8 @@
    `(font-lock-string-face ((t (:italic t :foreground ,green))))
    `(font-lock-type-face ((t (:foreground ,yellow))))
    `(font-lock-variable-name-face ((t (:foreground ,foreground))))
-   `(font-lock-warning-face ((t (:bold t :foreground ,warning-red))))
+   `(font-lock-warning-face ((t (:bold t :foreground ,warning-red
+                                       :background ,yellow))))
 
    ;; which-func mode
    `(which-func-face ((t (:foreground ,foreground))))

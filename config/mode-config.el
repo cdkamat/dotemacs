@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Sat, 3 August 2013 15:32:29 PDT
+;; Last modified : Mon, 5 August 2013 13:32:39 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -155,7 +155,7 @@
     (semantic-mode 1)
     (add-hook 'speedbar-load-hook (lambda () (require 'semantic/sb)))
     (font-lock-add-keywords nil
-          '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+          '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1 font-lock-warning-face t)))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
