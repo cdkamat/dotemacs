@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Sat, 3 August 2013 16:19:45 PDT
+;; Last modified : Sun, 11 August 2013 00:54:57 PDT
 
 ;; User details
 
@@ -8,9 +8,9 @@
 
 ;; Boot-strapping the config
 (unless (file-exists-p (concat cdk-lisp-dir "cache"))
-  (make-directory "cache" cdk-lisp-dir))
+  (make-directory (concat cdk-lisp-dir "cache") t))
 (unless (file-exists-p (concat cdk-lisp-dir "plugins/el-get"))
-  (make-directory "el-get" (concat cdk-lisp-dir "plugins")))
+  (make-directory (concat cdk-lisp-dir "plugins/el-get") t))
 
 ;; el-get bootstrap
 (unless (require 'el-get nil t)
