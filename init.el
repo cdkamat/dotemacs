@@ -1,8 +1,8 @@
 ;; init.el Loads everything
-;; Last modified : Sat, 3 August 2013 16:20:19 PDT
+;; Last modified : Mon, 12 August 2013 00:58:03 PDT
 
 ;;Emacs load path
-(defvar cdk-lisp-dir "~/.emacs.d")
+(defvar cdk-lisp-dir "~/.emacs.d/")
 
 (let* ((default-directory cdk-lisp-dir)
        (orig-load-path load-path))

@@ -2,7 +2,7 @@
 
 (require 'auto-complete)
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
+(add-to-list 'ac-dictionary-directories (concat el-get-dir "/auto-complete/dict/"))
 (setq ac-comphist-file (concat cache-dir "ac-comphist.dat"))
 (ac-config-default)
 (ac-flyspell-workaround)
