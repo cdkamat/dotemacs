@@ -1,4 +1,4 @@
-# Last modified: Sat, 3 August 2013 16:32:12 PDT
+# Last modified: Tue, 27 August 2013 00:53:25 PDT
 # Author : Chinmay Kamat (@cdkamat)
 
 This repository contains my Emacs customizations and configurations. The
@@ -14,12 +14,14 @@ cache/   -- Temp files
 init.el  -- Config starts loading from this file
 
 el-get and all the required pacakages will be installed the first time Emacs is
-started with this configuration.
+started with this configuration. You may need to install version control utilies
+like mercurial (hg) and svn since some of the el-get recipes depend on them.
 
 This configuration currently installs the following packages using el-get:
 - auto-complete
 - auto-complete-latex
-- elpy
+- elpy : also requires python side installs as listed at
+  https://github.com/jorgenschaefer/elpy/wiki/Installation#python-side
 - icomplete+
 - magit
 - protobuf-mode
