@@ -1,8 +1,9 @@
-# Last modified: Tue, 27 August 2013 00:53:25 PDT
+# Last modified: Thu, 29 August 2013 11:24:48 PDT
 # Author : Chinmay Kamat (@cdkamat)
 
 This repository contains my Emacs customizations and configurations. The
-current version of the configuration is based on the el-get package manager.
+current version of the configuration is based on the el-get package manager and
+requires Emacs version to be >= 24.3
 
 The general structure of directories is :
 
