@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Mon, 12 August 2013 01:06:02 PDT
+;; Last modified : Mon, 12 August 2013 11:45:26 PDT
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -104,6 +104,7 @@
 	    (c-set-style "linux")
 	    (setq c-basic-offset 4)
             (local-set-key (kbd "C-c C-c") 'compile)
+            (local-set-key (kbd "C-c o") 'ff-find-other-file)
             (let ((filename (buffer-file-name)))
               ;; Enable google-style for the appropriate files
               (when (and filename
