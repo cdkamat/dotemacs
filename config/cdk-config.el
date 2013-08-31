@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Sun, 11 August 2013 00:54:57 PDT
+;; Last modified : Fri, 30 August 2013 18:00:50 PDT
 
 ;; User details
 
@@ -53,6 +53,7 @@
       doc-view-continuous t
       column-number-mode t
       x-select-enable-clipboard t
+      xterm-mouse-mode t
       time-stamp-active 1
       time-stamp-line-limit 10
       time-stamp-pattern "\\([Ll]ast [Mm]odified\\|Date\\|@date\\) *[:]* %3a, %:d %:b %:Y %02H:%02M:%02S %Z$")
