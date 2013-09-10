@@ -34,12 +34,12 @@
 ;; Wrapper function needed for Emacs 21 and XEmacs (Emacs 22 offers the more
 ;; elegant solution of composing a list of lineup functions or quantities with
 ;; operators such as "add")
-(defun google-c-lineup-expression-plus-4 (langelem)
-  "Indents to the beginning of the current C expression plus 4 spaces.
+(defun google-c-lineup-expression-plus-2 (langelem)
+  "Indents to the beginning of the current C expression plus 2 spaces.
 
 This implements title \"Function Declarations and Definitions\"
 of the Google C++ Style Guide for the case where the previous
-line ends with an open parenthese.
+line ends with an open parenthese. However, we use only 2 spaces.
 
 \"Current C expression\", as per the Google Style Guide and as
 clarified by subsequent discussions, means the whole expression
@@ -62,7 +62,7 @@ Suitable for inclusion in `c-offsets-alist'."
      ;; the token after the initial colon.
      ((looking-at ":\\s *")
       (goto-char (match-end 0))))
-    (vector (+ 4 (current-column)))))
+    (vector (+ 2 (current-column)))))
 
 (defconst google-c-style
   `((c-recognize-knr-p . nil)
@@ -104,10 +104,10 @@ Suitable for inclusion in `c-offsets-alist'."
                        defun-close-semi
                        list-close-comma
                        scope-operator))
-    (c-offsets-alist . ((arglist-intro google-c-lineup-expression-plus-4)
-                        (func-decl-cont . ++)
-                        (member-init-intro . ++)
-                        (inher-intro . ++)
+    (c-offsets-alist . ((arglist-intro google-c-lineup-expression-plus-2)
+                        (func-decl-cont . +)
+                        (member-init-intro . +)
+                        (inher-intro . +)
                         (comment-intro . 0)
                         (arglist-close . c-lineup-arglist)
                         (topmost-intro . 0)
@@ -120,7 +120,7 @@ Suitable for inclusion in `c-offsets-alist'."
                              'c-no-indent-after-java-annotations)
                           ,(when (fboundp 'c-lineup-assignments)
                              'c-lineup-assignments)
-                          ++))
+                          +))
                         (label . /)
                         (case-label . +)
                         (statement-case-open . +)
