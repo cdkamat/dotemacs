@@ -1,7 +1,7 @@
 ;; ido-mode-config.el --  Configuration for ido-mode
 
-(setq 
-  ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+(setq
+  ido-save-directory-list-file (concat cache-dir "ido.last")
   ido-case-fold  t
   ido-enable-last-directory-history t
   ido-max-work-directory-list 30
