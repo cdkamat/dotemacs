@@ -36,7 +36,7 @@
 ;;Programming mode settings -- taken from http://github.com/vedang/emacs.d
 (defvar programming-major-modes
   '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode java-mode
-                    conf-mode asm-mode python-mode)
+                    conf-mode asm-mode python-mode protobuf-mode)
   "List of programming modes")
 
 (defun prog-mode-settings ()
