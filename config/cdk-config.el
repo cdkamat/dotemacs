@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Fri, 30 August 2013 18:00:50 PDT
+;; Last modified : Sun, 3 November 2013 00:02:06 PDT
 
 ;; User details
 
@@ -12,6 +12,8 @@
 (unless (file-exists-p (concat cdk-lisp-dir "plugins/el-get"))
   (make-directory (concat cdk-lisp-dir "plugins/el-get") t))
 
+(setq el-get-dir (concat cdk-lisp-dir "plugins/el-get"))
+
 ;; el-get bootstrap
 (unless (require 'el-get nil t)
   (setq el-get-install-branch "master")
@@ -21,8 +23,6 @@
     (end-of-buffer)
     (eval-print-last-sexp))
   (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
-
-(setq el-get-dir "~/.emacs.d/plugins/el-get/")
 
 ;; install all necessary packages
 (defvar cdk-el-get-packages)
