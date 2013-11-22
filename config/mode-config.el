@@ -1,5 +1,5 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Mon, 12 August 2013 11:45:26 PDT
+;; Last modified : Fri, 22 November 2013 00:41:33 PST
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -72,7 +72,7 @@
 ;; Auto-complete mode
 (require 'auto-comp-config)
 (require 'auto-complete-latex nil 'noerror)
-(setq ac-l-dict-directory (concat el-get-dir "auto-complete-latex/ac-l-dict/"))
+(setq ac-l-dict-directory (concat el-get-dir "/auto-complete-latex/ac-l-dict/"))
 (add-hook 'latex-mode-hook 'ac-l-setup)
 
 ;; Magit
