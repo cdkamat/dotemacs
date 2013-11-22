@@ -1,9 +1,8 @@
 ;; Taken from http://github.com/vedang/emacs.d
-;; Turn on documentation in elisp mode and compile after save
+;; Turn on documentation in elisp mode
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (turn-on-eldoc-mode)
-	    (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
+            (turn-on-eldoc-mode)))
 
 (defun rgr/toggle-context-help()
   "Turn on or off the context help.

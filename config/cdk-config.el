@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Sun, 3 November 2013 00:02:06 PDT
+;; Last modified : Fri, 22 November 2013 00:57:09 PST
 
 ;; User details
 
@@ -12,7 +12,7 @@
 (unless (file-exists-p (concat cdk-lisp-dir "plugins/el-get"))
   (make-directory (concat cdk-lisp-dir "plugins/el-get") t))
 
-(setq el-get-dir (concat cdk-lisp-dir "plugins/el-get"))
+(setq el-get-dir (concat cdk-lisp-dir "plugins/el-get/"))
 
 ;; el-get bootstrap
 (unless (require 'el-get nil t)
@@ -28,8 +28,8 @@
 (defvar cdk-el-get-packages)
 (setq cdk-el-get-packages
       (append
-       '(magit auto-complete auto-complete-latex yasnippet icomplete+
-               elpy protobuf-mode)
+       '(auto-complete auto-complete-latex elpy icomplete+
+                       magit protobuf-mode yasnippet)
        (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get 'sync cdk-el-get-packages)
