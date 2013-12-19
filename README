@@ -1,4 +1,4 @@
-# Last modified: Thu, 29 August 2013 11:24:48 PDT
+# Last modified: Thu, 19 December 2013 01:02:16 PST
 # Author : Chinmay Kamat (@cdkamat)
 
 This repository contains my Emacs customizations and configurations. The
@@ -19,6 +19,7 @@ started with this configuration. You may need to install version control utilies
 like mercurial (hg) and svn since some of the el-get recipes depend on them.
 
 This configuration currently installs the following packages using el-get:
+- auctex
 - auto-complete
 - auto-complete-latex
 - elpy : also requires python side installs as listed at
