@@ -7,6 +7,10 @@
 	    (setq c-basic-offset 4)
             (local-set-key (kbd "C-c C-c") 'compile)
             (local-set-key (kbd "C-c o") 'ff-find-other-file)
+            (local-set-key (kbd "C-c j") 'semantic-complete-jump)
+            (local-set-key (kbd "C-c d") 'semantic-ia-fast-jump)
+            (local-set-key (kbd "C-c g") 'magit-grep)
+            (local-set-key (kbd "M-]")   'semantic-symref-symbol)
             (let ((filename (buffer-file-name)))
               ;; Enable google-style for the appropriate files
               (when (and filename

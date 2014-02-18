@@ -1,5 +1,5 @@
 ;; utility-functions.el - contains the functions that I use
-;; Last modified : Wed, 26 June 2013 18:01:09 PDT
+;; Last modified : Mon, 17 February 2014 18:53:09 PST
 
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
@@ -118,5 +118,16 @@
   (if (region-active-p)
       (kill-region (region-beginning) (region-end))
     (backward-kill-word arg)))
+
+;; Implementing my own copy of this function since it is required by
+;; semantic-ia-fast-jump but this function is not defined in etags.el
+;; of GNU emacs
+(require 'etags)
+(unless (fboundp 'push-tag-mark)
+  (defun push-tag-mark ()
+    "Push the current position to the ring of markers so that
+    \\[pop-tag-mark] can be used to come back to current position."
+    (interactive)
+    (ring-insert find-tag-marker-ring (point-marker))))
 
 (provide 'utility-functions)
