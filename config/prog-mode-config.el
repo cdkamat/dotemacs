@@ -71,7 +71,8 @@
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
     (semantic-mode 1)
-    (add-hook 'speedbar-load-hook (lambda () (require 'semantic/sb)))
+    (setq semanticdb-project-roots (quote ("~/src/nutanix/main/"))
+          semantic-idle-work-parse-neighboring-files-flag nil)
     (font-lock-add-keywords nil
           '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1 font-lock-warning-face t)))))
 
