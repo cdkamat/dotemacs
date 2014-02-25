@@ -6,7 +6,7 @@
 ;; Ported to GNU Emacs by Chris Charles
 ;; Ported to GNU Emacs 24's built-in theme system by Jim Myhrberg (@jimeh)
 
-;; Last modified: Mon, 5 August 2013 13:33:50 PDT
+;; Last modified: Mon, 24 February 2014 18:09:20 PST
 
 ;;; Code:
 
@@ -67,6 +67,7 @@
    `(org-hide ((t (:foreground ,current-line))))
    `(org-link ((t (:foreground ,blue))))
    `(org-todo ((t (:foreground ,red))))
+   `(org-warning ((t (:inherit nil))))
 
    ;; diff-mode
    `(diff-added ((t (:foreground ,green :background nil))))
