@@ -1,5 +1,5 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Thu, 19 December 2013 01:01:53 PST
+;; Last modified : Mon, 23 June 2014 16:53:03 PDT
 
 ;; User details
 
@@ -29,7 +29,7 @@
 (defvar cdk-el-get-packages)
 (setq cdk-el-get-packages
       (append
-       '(auctex auto-complete auto-complete-latex elpy icomplete+
+       '(auctex auto-complete auto-complete-latex cmake-mode elpy icomplete+
                 magit protobuf-mode yasnippet)
        (mapcar 'el-get-source-name el-get-sources)))
 
