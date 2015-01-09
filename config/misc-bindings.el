@@ -1,5 +1,5 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Tue, 2 July 2013 20:34:37 PDT
+;; Last modified : Thu, 8 January 2015 16:59:28 PST
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -67,6 +67,10 @@
     (progn
       (setq mac-command-modifier 'meta)
       (setq mac-option-modifier 'super)))
+
+;; Default keybindings for magit
+(global-set-key (kbd "C-c g") 'magit-grep)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 
 (provide 'misc-bindings)
