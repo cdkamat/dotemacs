@@ -7,9 +7,6 @@
 	    (setq c-basic-offset 4)
             (local-set-key (kbd "C-c C-c") 'compile)
             (local-set-key (kbd "C-c o") 'ff-find-other-file)
-            (local-set-key (kbd "C-c j") 'semantic-complete-jump)
-            (local-set-key (kbd "C-c d") 'semantic-ia-fast-jump)
-            (local-set-key (kbd "M-]")   'semantic-symref-symbol)
             (let ((filename (buffer-file-name)))
               ;; Enable google-style for the appropriate files
               (when (and filename
@@ -69,9 +66,6 @@
     (setq fill-column 80)
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
-    (semantic-mode 1)
-    (setq semanticdb-project-roots (quote ("~/src/nutanix/main/"))
-          semantic-idle-work-parse-neighboring-files-flag nil)
     (font-lock-add-keywords nil
           '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1 font-lock-warning-face t)))))
 
