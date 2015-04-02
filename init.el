@@ -1,14 +1,15 @@
 ;; init.el Loads everything
-;; Last modified : Mon, 12 August 2013 00:58:03 PDT
+;; Last modified : Thu, 12 March 2015 01:08:10 PDT
 
 ;;Emacs load path
-(defvar cdk-lisp-dir "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/config/")
 
-(let* ((default-directory cdk-lisp-dir)
-       (orig-load-path load-path))
-  (setq load-path (cons cdk-lisp-dir nil))
-  (normal-top-level-add-subdirs-to-load-path)
-  (nconc load-path orig-load-path))
+(let ((default-directory "~/.emacs.d/plugins/"))
+  (setq load-path
+        (append
+         (let ((load-path (copy-sequence load-path))) ;; Shadow
+           (normal-top-level-add-subdirs-to-load-path))
+         load-path)))
 
 ;; CDK customizations
 (require 'cdk-config)

@@ -1,10 +1,12 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Mon, 23 June 2014 16:53:03 PDT
+;; Last modified : Thu, 2 April 2015 13:56:17 PDT
 
 ;; User details
 
 (setq user-full-name "Chinmay Kamat")
 (setq user-mail-address "chinmaykamat@gmail.com")
+
+(defvar cdk-lisp-dir "~/.emacs.d/")
 
 ;; Boot-strapping the config
 (unless (file-exists-p (concat cdk-lisp-dir "cache"))
