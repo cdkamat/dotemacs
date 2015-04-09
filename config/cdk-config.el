@@ -1,8 +1,6 @@
 ;; cdk-config.el - Contains my customizations and configurations
-;; Last modified : Thu, 2 April 2015 13:56:17 PDT
 
 ;; User details
-
 (setq user-full-name "Chinmay Kamat")
 (setq user-mail-address "chinmaykamat@gmail.com")
 
@@ -94,7 +92,6 @@
       vc-make-backup-files t);;Make backup even if under version control
 
 ;; Hooks
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'time-stamp)
 
 ;; Whitespace settings

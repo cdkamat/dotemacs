@@ -68,8 +68,12 @@
     (setq fill-column 80)
     (turn-on-auto-fill)
     (setq comment-auto-fill-only-comments t)
-    (font-lock-add-keywords nil
-          '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1 font-lock-warning-face t)))))
+    (font-lock-add-keywords
+     nil
+     '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1 font-lock-warning-face t)))
+    (add-hook 'write-contents-functions
+              (lambda() (save-excursion
+                          (delete-trailing-whitespace))))))
 
 (add-hook 'find-file-hook 'prog-mode-settings)
 
