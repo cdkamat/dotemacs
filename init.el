@@ -1,5 +1,4 @@
 ;; init.el Loads everything
-;; Last modified : Thu, 12 March 2015 01:08:10 PDT
 
 ;;Emacs load path
 (add-to-list 'load-path "~/.emacs.d/config/")

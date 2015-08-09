@@ -1,5 +1,4 @@
 ;; misc-bindings.el - contains key binding
-;; Last modified : Thu, 8 January 2015 16:59:28 PST
 
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
@@ -7,9 +6,6 @@
 ;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
-
-;;Ido Imenu
-(global-set-key (kbd "C-x C-i") 'ido-goto-symbol)
 
 ;; File finding
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)

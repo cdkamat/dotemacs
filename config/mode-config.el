@@ -1,5 +1,4 @@
 ;; mode-config.el - contains requires and mode settings
-;; Last modified : Fri, 22 November 2013 00:41:33 PST
 
 ;; Color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/plugins/themes")
@@ -67,8 +66,6 @@
 
 (require 'latex-mode-config)
 
-(require 'tbemail)
-
 ;; Auto-complete mode
 (require 'auto-comp-config)
 (require 'auto-complete-latex nil 'noerror)
@@ -78,6 +75,7 @@
 ;; Magit
 (require 'magit nil 'noerror)
 (require 'magit-blame nil 'noerror)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Enable elpy for python
 (require 'elpy nil 'noerror)

@@ -6,8 +6,6 @@
 ;; Ported to GNU Emacs by Chris Charles
 ;; Ported to GNU Emacs 24's built-in theme system by Jim Myhrberg (@jimeh)
 
-;; Last modified: Mon, 24 February 2014 18:09:20 PST
-
 ;;; Code:
 
 (deftheme cdk-wombat
